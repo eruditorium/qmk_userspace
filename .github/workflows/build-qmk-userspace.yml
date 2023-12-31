@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'keyboards/**'
-      - 'keymaps/*'
-      - '.github/workflows/*'
-      - '*.def'
-      - '*.c'
-      - '*.h'
+      - "keyboards/**"
+      - "keymaps/*"
+      - ".github/workflows/*"
+      - "*.def"
+      - "*.c"
+      - "*.h"
 
 jobs:
   list-user-keymaps:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: set-matrix
-        run: echo "matrix=$(find keyboards -regex ".*keymaps" | sed "s|keyboards/\(.*\)/keymaps|\1|"| jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(find keyboards -regex "keymaps.c" | sed "s|keyboards/\(.*\)/keymaps|\1|"| jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
       - run: echo $GITHUB_OUTPUT
 
   compile-userpace-keymaps:
@@ -35,38 +35,38 @@ jobs:
     # by default, checks out to github.workspace
     # github.workspace will also be qmk_firmware root
     steps:
-    - name: Checkout QMK
-      uses: actions/checkout@v3
-      with:
-        repository: qmk/qmk_firmware
-        ref: master
-        submodules: true
+      - name: Checkout QMK
+        uses: actions/checkout@v3
+        with:
+          repository: qmk/qmk_firmware
+          ref: master
+          submodules: true
 
-    # path is relative to github.workspace
-    - name: Checkout userspace
-      uses: actions/checkout@v3
-      with:
-        path: ${{ env.USERSPACE_PATH }}
-        persist-credentials: false
+      # path is relative to github.workspace
+      - name: Checkout userspace
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.USERSPACE_PATH }}
+          persist-credentials: false
 
-    - name: Setup safe directory
-      run: git config --global --add safe.directory '*'
+      - name: Setup safe directory
+        run: git config --global --add safe.directory '*'
 
-    - name: Install rsync
-      run:  apt-get update; apt-get install -y rsync
+      - name: Install rsync
+        run: apt-get update; apt-get install -y rsync
 
-    - name: Copy users/keyboards/* to keyboards/*
-      run: rsync -av ${{ env.USERSPACE_PATH }}/keyboards/ keyboards/
+      - name: Copy users/keyboards/* to keyboards/*
+        run: rsync -av ${{ env.USERSPACE_PATH }}/keyboards/ keyboards/
 
-    - name: QMK compile
-      run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
+      - name: QMK compile
+        run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
 
-    - name: Archive firmware
-      uses: actions/upload-artifact@v3.1.2
-      with:
-        retention-days: 60
-        name: qmk_user_firmware
-        path: |
-          *.hex
-          *.bin
-          *.uf2
+      - name: Archive firmware
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          retention-days: 60
+          name: qmk_user_firmware
+          path: |
+            *.hex
+            *.bin
+            *.uf2
