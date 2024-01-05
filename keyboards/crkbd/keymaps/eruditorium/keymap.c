@@ -85,18 +85,6 @@ enum custom_keycodes {
 #define COLEMAK DF(_COLEMAK)
 #define QWERTY DF(_QWERTY)
 
-// LEFT HAND HOME ROW MODS COLEMAK ├─────────────────┐
-//#define CTL_Z MT(MOD_LCTL, KC_Z)
-//#define GUI_X MT(MOD_LGUI, KC_X)
-//#define ALT_C MT(MOD_LALT, KC_C)
-#define SHT_T MT(MOD_LSFT, KC_T)
-
-// RIGHT HAND HOME ROW MODS COLEMAK ├────────────────┐
-#define SHT_N MT(MOD_RSFT, KC_N)
-//#define CTL_SLSH MT(MOD_LCTL, KC_SLSH)
-//#define GUI_DOT MT(MOD_LGUI, KC_DOT)
-//#define ALT_COMM MT(MOD_LALT, KC_COMM)
-
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                          │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -122,30 +110,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_GESC,   KC_Q,    KC_W,    KC_E,   KC_R,      KC_T,                        KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,     KC_BSPC,
     KC_TAB,    KC_A,    KC_S,    KC_D,   SHT_F,     KC_G,                        KC_H,    SHT_J,   KC_K,     KC_L,    KC_SCLN,  MC_QUOT,
     CTL_MNS,   CTL_Z,   GUI_X,   ALT_C,  KC_V,      KC_B,                        KC_N,    KC_M,    ALT_COMM, GUI_DOT, CTL_SLSH, KC_RSFT,
-                                         KC_BSPC,   LOWER,  KC_ENTER,  KC_SPACE, RAISE,   ALT_DEL
-  ),
-
-/*
-   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
-
-   ┌─────────────────────────────────────────────────┐
-   │ c o l e m a k  -  d h                           │      
-   └─────────────────────────────────────────────────┘
-
-  ,-----------------------------------------------------.                    ,-----------------------------------------------------.
-  |   ESC  |   Q    |   W    |   F    |   P    |   B    |                    |   J    |   L    |   U    |   Y    |  ;/:   |  BSPC  |
-  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  |   Tab  |   A    |   R    |   S    | T/Shft |   G    |                    |   M    | N/Shft |   E    |   I    |   O    |  '/"   |
-  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  | Ctrl/- | Z/Ctrl | X/Gui  |  C/Alt |   D    |   V    |                    |   K    |   H    | ,/RAlt | ./Gui  | //Ctrl | Shift  |
-  `--------+--------+--------+--------+--------+--------+--------.  .--------+--------+--------+--------+--------+--------+--------'
-                                      |  BSPC  | LW/ESC | ENTER  |  |  SPACE | RS/TAB |RAlt/Del|
-                                      `--------------------------'  `--------------------------'    
-*/
-  [_COLEMAK] = LAYOUT_split_3x6_3(
-    QK_GESC,   KC_Q,    KC_W,    KC_F,   KC_P,      KC_B,                        KC_J,    KC_L,    KC_U,     KC_Y,    KC_SCLN,  KC_BSPC,
-    KC_TAB,    KC_A,    KC_R,    KC_S,   SHT_T,     KC_G,                        KC_M,    SHT_N,   KC_E,     KC_I,    KC_O,     MC_QUOT,
-    CTL_MNS,   CTL_Z,   GUI_X,   ALT_C,  KC_D,      KC_V,                        KC_K,    KC_H,    ALT_COMM, GUI_DOT, CTL_SLSH, KC_RSFT,
                                          KC_BSPC,   LOWER,  KC_ENTER,  KC_SPACE, RAISE,   ALT_DEL
   ),
 
@@ -239,20 +203,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef TAPPING_TERM_PER_KEY                                                                                                                                                              
     uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case GUI_X:
-        case GUI_DOT:
-        case ALT_C:
-        case ALT_COMM:
-        case ALT_DEL:
-            return TAPPING_TERM + 80;
-        case CTL_Z:
-        case CTL_SLSH:
-            return TAPPING_TERM - 20;
         case SHT_F:
         case SHT_J:
-        case SHT_T:
-        case SHT_N:
-            return TAPPING_TERM + 40;
+            return TAPPING_TERM - 50;
         default:
             return TAPPING_TERM;
     }   
@@ -494,10 +447,6 @@ static const char PROGMEM layer_adjust[] = {
     0, 224, 240, 224, 8, 28, 28, 28, 28, 28, 28, 8, 224, 240, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 240, 224, 0, 0, 199, 239, 199, 16, 56, 56, 56, 56, 56, 56, 16, 199, 239, 199, 0, 0, 192, 224, 192, 16, 56, 56, 56, 56, 56, 56, 16, 199, 239, 199, 0, 0, 15, 31, 15, 0, 0, 0, 0, 0, 0, 0, 0, 15, 31, 15, 0, 0, 15, 31, 15, 32, 112, 112, 112, 112, 112, 112, 32, 15, 31, 15, 0,
 };
 
-static const char PROGMEM layer_colemak[] = {
-    0,224,240,224,  8, 28, 28, 28, 28, 28, 28,  8,  0,  0,  0,  0,  0,224,240,224,  8, 28, 28, 28, 28, 28, 28,  8,224,240,224,  0,  0,199,239,199,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,199,239,199,  0,  0,  0,  0,  0,  0,  0,  0,199,239,199,  0,  0, 15, 31, 15, 32,112,112,112,112,112,112, 32,  0,  0,  0,  0,  0, 15, 31, 15, 32,112,112,112,112,112,112, 32, 15, 31, 15,  0,
-};
-
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
 }
@@ -513,14 +462,7 @@ void fp_render_layer_state(void) {
     } else if (layer_state_is(_RAISE)) {
         oled_write_raw_P(layer_raise, sizeof(layer_raise));
     } else {
-        switch (biton32(default_layer_state)) {
-            case _COLEMAK:
-                oled_write_raw_P(layer_colemak, sizeof(layer_colemak));
-                break;
-            case _QWERTY:
-                oled_write_raw_P(layer_default, sizeof(layer_default));
-                break;
-        };  
+        oled_write_raw_P(layer_default, sizeof(layer_default));
     }
 }
 
