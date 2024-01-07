@@ -62,7 +62,7 @@ jobs:
         run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
 
       - name: Create json
-        run: echo ${{ matrix.keyboards }}, ${{ github.actor}}
+        run: echo ${{ matrix.keyboards }}/keymaps/${{ github.actor}}/
         
       - name: Archive firmware
         uses: actions/upload-artifact@v3.1.2
