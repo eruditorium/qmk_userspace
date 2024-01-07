@@ -62,7 +62,8 @@ jobs:
         run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
 
       - name: Create json
-        run: echo ${{ matrix.keyboards }}/keymaps/${{ github.actor}}/
+        run: qmk c2json -o ~/${{ matrix.keyboards }}.json -km eruditorium -kb ${{ matrix.keyboards }} ${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
+        
         
       - name: Archive firmware
         uses: actions/upload-artifact@v3.1.2
