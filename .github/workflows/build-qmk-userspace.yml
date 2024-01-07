@@ -1,4 +1,4 @@
-name: QMK userspace Build
+boardsname: QMK userspace Build
 on:
   workflow_dispatch:
   push:
@@ -61,8 +61,11 @@ jobs:
       - name: QMK compile
         run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
 
+      - name: test
+        run: echo keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c
+        
       - name: Create json
-        run: qmk c2json -o ~/${{ matrix.keyboards }}.json -km eruditorium -kb ${{ matrix.keyboards }} ${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
+        run: qmk c2json -o ~/${{ matrix.keyboards }}.json -km eruditorium -kb ${{ matrix.keyboards }} keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
         
         
       - name: Archive firmware
