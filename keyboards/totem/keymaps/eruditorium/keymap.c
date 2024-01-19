@@ -74,7 +74,7 @@ enum custom_keycodes {
 
 #define ALT_DEL RALT_T(KC_DEL)
 #define Celsius RALT(LSFT(KC_0))
-#define CTRL_WRD LCTRL(KC_RGHT)
+#define CTRL_WRD LCTL_T(KC_RGHT)
 
 #define ENT_SFT LSFT_T(KC_ENTER)
 #define SPC_CTL RCTL_T(KC_SPACE)
