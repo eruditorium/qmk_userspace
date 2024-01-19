@@ -59,10 +59,10 @@ enum custom_keycodes {
 #define CTL_Z LCTL_T(KC_Z)
 #define GUI_X LGUI_T(KC_X)
 #define ALT_C LALT_T(KC_C)
-#define SHT_F LSFT_T(KC_F)
+#define SFT_F LSFT_T(KC_F)
 
 // RIGHT HAND HOME ROW MODS ├───────────────────────────────────┐
-#define SHT_J RSFT_T(KC_J)
+#define SFT_J RSFT_T(KC_J)
 #define CTL_SLSH RCTL_T(KC_SLSH)
 #define ALT_COMM RALT_T(KC_COMM)
 #define GUI_DOT RGUI_T(KC_DOT)
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_QWERTY] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
-              KC_A,     KC_S,     KC_D,     SHT_F,    KC_G,      KC_H,     SHT_J,    KC_K,     KC_L,     KC_SCLN,
+              KC_A,     KC_S,     KC_D,     SFT_F,    KC_G,      KC_H,     SFT_J,    KC_K,     KC_L,     KC_SCLN,
     KC_MINS,  CTL_Z,    GUI_X,    ALT_C,    KC_V,     KC_B,      KC_N,     KC_M,     ALT_COMM, GUI_DOT,  CTL_SLSH,  MC_QUOT,
                                   KC_BSPC,  LOWER,    ENT_SFT,   SPC_CTL,  RAISE,    ALT_DEL
     ),
