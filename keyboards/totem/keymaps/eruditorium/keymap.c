@@ -231,11 +231,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ l a y e r                                       │
 // └─────────────────────────────────────────────────┘
 
-         case COLEMAK:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_COLEMAK);
-            }
-            return false;
         case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
@@ -270,10 +265,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CTL_Z:
         case CTL_SLSH:
             return TAPPING_TERM + 50;
-        case SHT_F:
-        case SHT_J:
-        case SHT_T:
-        case SHT_N:
+        case SFT_F:
+        case SFT_J:
             return TAPPING_TERM + 30;
         default:
             return TAPPING_TERM;
