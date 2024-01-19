@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷            ╷           ╷           ╷           ╷          ╷╷         ╷            ╷            ╷            ╷           ╷         ╷
               KC_EXLM,     KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,  RALT(KC_U),  KC_AMPR,     RALT(KC_P),  KC_BSLS,
               RALT(KC_A),  RALT(KC_S), RALT(KC_S), RALT(KC_G), XXXXXXX,    Celsius,  XXXXXXX,     RALT(KC_5),  XXXXXXX,     KC_PIPE, 
-    SELWORD,  LSFT(KC_GRV),KC_TILD,    XXXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,     XXXXXXX,     KC_BSLS,    XXXXXXX, 
+    SELWORD,  LSFT(KC_GRV),KC_TILD,    XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,     XXXXXXX,     KC_BSLS,    XXXXXXX, 
                                        _______,    ADJUST,     KC_MINS,    _______,  _______,     _______
  ),
 
