@@ -76,7 +76,7 @@ enum custom_keycodes {
 
 
 // GENERAL ├─────────────────┐
-#define Celsius RALT(LSFT(KC_0))
+#define Celsius RALT(LSFT(KC_SCLN))
 #define CTL_MNS LCTL_T(KC_MINS)
 #define ALT_DEL RALT_T(KC_DEL)
 #define LOWER LT(_LOWER, KC_ESC)
