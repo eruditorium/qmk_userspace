@@ -148,7 +148,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef OLED_FONT_HEIGHT
 #undef OLED_FONT_END
 
-#define OLED_FONT_H "keyboards/crkbd/keymaps/nico/glcdfont.c"
+#define OLED_FONT_H "features/glcdfont.c"
 #define OLED_FONT_WIDTH 8
 #define OLED_FONT_HEIGHT 8
 #define OLED_FONT_END 0x9F
