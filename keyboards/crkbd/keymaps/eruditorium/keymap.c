@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include "features/select_word.h"
-
 #include "features/combos.c"
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ D E F I N I T I O N S                                                                                                  │
@@ -56,33 +55,7 @@ enum custom_keycodes {
     SELWORD,
 };
 
-
-// ┌─────────────────────────────────────────────────┐
-// │ d e f i n e   m a c r o n a m e s               │
-// └─────────────────────────────────────────────────┘
-
-// LEFT HAND HOME ROW MODS QWERTY ├──────────────────
-#define CTL_Z LCTL_T(KC_Z)
-#define GUI_X LGUI_T(KC_X)
-#define ALT_C LALT_T(KC_C)
-#define SHT_F LSFT_T(KC_F)
-
-// RIGHT HAND HOME ROW MODS QWERTY ├─────────────────┐
-#define SHT_J RSFT_T(KC_J)
-#define ALT_COMM RALT_T(KC_COMM)
-#define GUI_DOT RGUI_T(KC_DOT)
-#define CTL_SLSH RCTL_T(KC_SLSH)
-
-
-// GENERAL ├─────────────────┐
-#define Celsius RALT(LSFT(KC_SCLN))
-#define CTL_MNS LCTL_T(KC_MINS)
-#define ALT_DEL RALT_T(KC_DEL)
-#define LOWER LT(_LOWER, KC_ESC)
-#define RAISE LT(_RAISE, KC_TAB)
-#define ADJUST MO(_ADJUST)
-#define QWERTY DF(_QWERTY)
-
+#include "features/macro.c"
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                          │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
