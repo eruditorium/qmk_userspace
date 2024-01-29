@@ -24,7 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "features/select_word.h"
 
 #include "features/combos.c"
-#include "features/oled.c"
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ D E F I N I T I O N S                                                                                                  │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -37,12 +36,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
-//enum crkbd_layers {
-//    _QWERTY = 0,
-//    _LOWER,
-//    _RAISE,
-//    _ADJUST,
-//};
+enum crkbd_layers {
+    _QWERTY = 0,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
+};
 
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   k e y c o d e s                   │
@@ -214,57 +213,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-
-    if (record->event.pressed) {
-        animation_timeout = timer_read32();
-        frame_timer       = timer_read32();
-        oled_on();
-    }
-
-    //if (!process_select_word(keycode, record, SELWORD)) { return false; }
-    
-    switch (keycode) {
-
-        // ┌─────────────────────────────────────────────────┐
-        // │ d e a d   k e y s                               │
-        // └─────────────────────────────────────────────────┘
-        case MC_QUOT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_QUOT) SS_TAP(X_SPC));
-            }
-            break;
-
-        // ┌─────────────────────────────────────────────────┐
-        // │ p r o d u c t i v i t y                         │
-        // └─────────────────────────────────────────────────┘
-
-      case SNAP:
-          if (record->event.pressed) {
-            SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-          }
-          break;
-    }
-    return true;
-}
-
-bool oled_task_user(void) {
-    if (is_keyboard_master()) {
-        oled_write_raw_P(shuttle, sizeof(shuttle));
-        render_animation(launch_frames, sizeof(launch_1), 5, 0, 5);
-        fp_render_layer_state();
-        fp_render_modifier_state();
-    } else {
-        render_animation(space_frames, sizeof(space_1), 5, 0, 0);
-    }
-
-    return false;
-}
-
-bool should_process_keypress(void) {
-    return true;
-}
-
-#endif
+#include "features/oled.c"
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
