@@ -67,7 +67,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef RGBLIGHT_ENABLE
     //#undef RGBLED_NUM
     #undef RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #undef RGBLIGHT_EFFECT_RAINBOW_MOOD
     #undef RGBLIGHT_EFFECT_KNIGHT
     #undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
     #undef RGBLIGHT_EFFECT_SNAKE
