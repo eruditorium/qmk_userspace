@@ -37,12 +37,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
-enum crkbd_layers {
-    _QWERTY = 0,
-    _LOWER,
-    _RAISE,
-    _ADJUST,
-};
+//enum crkbd_layers {
+//    _QWERTY = 0,
+//    _LOWER,
+//    _RAISE,
+//    _ADJUST,
+//};
 
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   k e y c o d e s                   │
