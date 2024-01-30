@@ -19,7 +19,7 @@
 #define Celsius RALT(LSFT(KC_SCLN))
 #define CTL_MNS LCTL_T(KC_MINS)
 #define ALT_DEL RALT_T(KC_DEL)
-#define LOWER LT(_LOWER, KC_ESC)
+#define LOWER LT(_LOWER, KC_MINUS)
 #define RAISE LT(_RAISE, KC_TAB)
 #define ADJUST MO(_ADJUST)
 #define QWERTY DF(_QWERTY)
