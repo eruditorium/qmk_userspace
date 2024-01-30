@@ -7,8 +7,8 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
 
-DYNAMIC_MACRO_ENABLE = yes
-COMBO_ENABLE = no
+DYNAMIC_MACRO_ENABLE = no
+COMBO_ENABLE = yes
 EXTRAKEY_ENABLE = yes
 
 # https://docs.qmk.fm/#/feature_caps_word
