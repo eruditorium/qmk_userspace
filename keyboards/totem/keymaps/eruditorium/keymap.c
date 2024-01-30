@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include "totem.h"
 #include "features/select_word.h"
-
+#include "features/combos.c"
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ D E F I N I T I O N S                                                                                                  │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -30,7 +30,7 @@
 // └─────────────────────────────────────────────────┘
 
 enum totem_layers {
-    _QWERTY,
+    _QWERTY=0,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -48,36 +48,9 @@ enum custom_keycodes {
     ADJUST,
     SNAP,
     SELWORD,
-    CTRL_END
 };
 
-// ┌─────────────────────────────────────────────────┐
-// │ d e f i n e   m a c r o n a m e s               │
-// └─────────────────────────────────────────────────┘
-
-// LEFT HAND HOME ROW MODS ├───────────────────────────────────┐
-#define CTL_Z LCTL_T(KC_Z)
-#define GUI_X LGUI_T(KC_X)
-#define ALT_C LALT_T(KC_C)
-#define SFT_F LSFT_T(KC_F)
-
-// RIGHT HAND HOME ROW MODS ├───────────────────────────────────┐
-#define SFT_J RSFT_T(KC_J)
-#define CTL_SLSH RCTL_T(KC_SLSH)
-#define ALT_COMM RALT_T(KC_COMM)
-#define GUI_DOT RGUI_T(KC_DOT)
-
-// HOME ROW MODS QWERTY ├──────────────────
-#define LOWER LT(_LOWER, KC_MINS)
-#define RAISE LT(_RAISE, KC_TAB)
-#define ADJUST MO(_ADJUST)
-
-#define ALT_DEL RALT_T(KC_DEL)
-#define Celsius RALT(LSFT(KC_SCLN))
-#define CTRL_WRD LCTL_T(KC_RGHT)
-
-#define ENT_SFT LSFT_T(KC_ENTER)
-#define SPC_CTL RCTL_T(KC_SPACE)
+#include "features/macro.c"
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                          │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -94,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    S    │    D    │  F/SFT  │    G    ││    H    │  J/SFT  │    K    │    L    │    ;    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    -    │  Z/CTL  │  X/GUI  │  C/ALT  │    V    │    B    ││    N    │    M    │ ,/AltGr │  ./GUI  │ //CTRL  │ MC_QUOT │
+   │ Ctrl/-  │  Z/CTL  │  X/GUI  │  C/ALT  │    V    │    B    ││    N    │    M    │ ,/AltGr │  ./GUI  │ //CTRL  │ MC_QUOT │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │   BSPC  │  LWR/-  │ ENTR/SFT││ SPC/CTRL│  RS/TAB │ RAlt/DEL│
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/
@@ -103,8 +76,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
               KC_A,     KC_S,     KC_D,     SFT_F,    KC_G,      KC_H,     SFT_J,    KC_K,     KC_L,     KC_SCLN,
-    KC_MINS,  CTL_Z,    GUI_X,    ALT_C,    KC_V,     KC_B,      KC_N,     KC_M,     ALT_COMM, GUI_DOT,  CTL_SLSH,  MC_QUOT,
-                                  KC_BSPC,  LOWER,    ENT_SFT,   SPC_CTL,  RAISE,    ALT_DEL
+    CTL_MINS, CTL_Z,    GUI_X,    ALT_C,    KC_V,     KC_B,      KC_N,     KC_M,     ALT_COMM, GUI_DOT,  CTL_SLSH,  MC_QUOT,
+                                  KC_BSPC,  LOWER,    KC_ENTER,  KC_SPACE, RAISE,    ALT_DEL
     ),
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -113,21 +86,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ l o w e r                                       │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡   ESC   │  HOME   │    ↑    │   PG↑   │    {    ││    }    │    7    │    8    │    9    │    +    │   
+     ╌┄┈┈───═╡ CAPSLCK │  HOME   │    ↑    │   PG↑   │    {    ││    }    │    7    │    8    │    9    │    +    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │   TAB   │    ←    │    ↓    │    →    │    [    ││    ]    │    4    │    5    │    6    │    -    │    
+             │ NUMLCK  │    ←    │    ↓    │    →    │    [    ││    ]    │    4    │    5    │    6    │    -    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ SCRNSHT │         │   END   │ Ctrl+ → │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
+   │ SCRNSHT │ SNAP    │   END   │ Ctrl+ → │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    _    │ ADJUST  │    0    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_LOWER] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_ESC,   KC_NUM,   KC_UP,    KC_PGUP,  KC_LCBR,   KC_RCBR,  KC_7,     KC_8,     KC_9,     KC_PPLS,
-              KC_TAB,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_4,     KC_5,     KC_6,     KC_MINS,  
-    SNAP,     XXXXXXX,  KC_END,   CTRL_WRD, KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
-                                  KC_DEL,   _______,  _______,   KC_UNDS,  ADJUST,   KC_0
+              KC_CAPS,   KC_NUM,   KC_UP,    KC_PGUP,  KC_LCBR,   KC_RCBR,  KC_7,     KC_8,     KC_9,     KC_PPLS,
+              KC_NUM,    KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_4,     KC_5,     KC_6,     KC_MINS,  
+    SNAP,     XXXXXXX,   KC_END,   CTRL_WRD, KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
+                                  KC_DEL,   _______,  _______,    KC_UNDS,  ADJUST,   KC_0
  ),
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -136,24 +109,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ r a i s e                                       │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡    !    │    @    │    #    │    $    │    %    ││    ^    │    Ü    │    &    │    Ö    │    /    │   
+     ╌┄┈┈───═╡    !    │    @    │    #    │    $    │    %    ││    ^    │    Ü    │    &    │    Ö    │    ˚    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │    Ä    │    è    │    ß    │    é    │         ││    ˚    │    ¥    │    €    │         │    |    │
+             │    Ä    │    ß    │    è    │    é    │    ç    ││    \    │    £    │    €    │         │    µ    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │    `    │    ~    │         │         │         ││         │         │         │         │    \    │         │
+   │    ▼    │    `    │    ~    │   CUE   │         │         ││    |    │         │    ²    │    ³    │         │    ▼    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │ ADJUST  │    -    ││    ▼    │    ▼    │    ▼    │  
+                                 │   ▼     │ ADJUST  │    -    ││    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_RAISE] = LAYOUT(
- //╷         ╷            ╷           ╷           ╷           ╷          ╷╷         ╷            ╷            ╷            ╷           ╷         ╷
-              KC_EXLM,     KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,  RALT(KC_U),  KC_AMPR,     RALT(KC_P),  KC_BSLS,
-              RALT(KC_A),  RALT(KC_S), RALT(KC_S), RALT(KC_G), XXXXXXX,    Celsius,  XXXXXXX,     RALT(KC_5),  XXXXXXX,     KC_PIPE, 
-    SELWORD,  LSFT(KC_GRV),KC_TILD,    XXXXXXX,   XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,     XXXXXXX,     XXXXXXX,     KC_BSLS,    XXXXXXX, 
-                                       _______,    ADJUST,     KC_MINS,    _______,  _______,     _______
+ //╷         ╷            ╷           ╷           ╷           ╷          ╷         ╷         ╷                 ╷            ╷            ╷           ╷         ╷
+              KC_EXLM,     KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,             KC_CIRC,  RALT(KC_Y),       KC_AMPR,     RALT(KC_P),  Celsius
+              RALT(KC_Q),  RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)), KC_BSLS,  LSFT(RALR(KC_4)), RALT(KC_5),  RALT(KC_4),  RALT(KC_M), 
+    SELWORD,  LSFT(KC_GRV),KC_TILD,    RALT(KC_C), XXXXXXX,    XXXXXXX,             KC_PIPE,  XXXXXXX,          RALT(KC_2),  RALT(KC_3),  XXXXXXX,  _______, 
+                                       _______,    ADJUST,     KC_MINS,             _______,  _______,     _______
  ),
 
- /*
+
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
    
    ┌─────────────────────────────────────────────────┐
@@ -164,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │  DEBUG  │         │  Stop   │  Next   │   VOL↑  ││CAPSLOCK │   F4    │   F5    │   F6    │   F11   │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │         │         │  Play   │  Prv    │   VOL↓  ││SCRLLOCK │   F1    │   F2    │   F3    │   F10   │         │
+   │    ▼    │         │         │  Play   │  Prv    │   VOL↓  ││SCRLLOCK │   F1    │   F2    │   F3    │   F10   │    ▼    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -173,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               QK_BOOT,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   KC_NUM,   KC_F7,    KC_F8,    KC_F9,    KC_F12,   
               DB_TOGG,  XXXXXXX,  KC_MSTP,  KC_MNXT,  KC_VOLU,   KC_CAPS,  KC_F4,    KC_F5,    KC_F6,    KC_F11,
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_MPLY,  KC_MPRV,  KC_VOLD,   KC_SCRL,  KC_F1,    KC_F2,    KC_F3,    KC_F10,   XXXXXXX,
+    _______,  XXXXXXX,  XXXXXXX,  KC_MPLY,  KC_MPRV,  KC_VOLD,   KC_SCRL,  KC_F1,    KC_F2,    KC_F3,    KC_F10,   _______,
                                   _______,  _______,  _______,   _______,  _______,  _______  
  )
  
@@ -250,30 +223,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// ┌─────────────────────────────────────────────────┐
-// │ t a p p i n g t e r m                           │
-// └─────────────────────────────────────────────────┘
-
-#ifdef TAPPING_TERM_PER_KEY
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case GUI_X:
-        case GUI_DOT:
-        case ALT_C:
-        case ALT_COMM:
-            return TAPPING_TERM + 80;
-        case CTL_Z:
-        case CTL_SLSH:
-            return TAPPING_TERM + 50;
-        case SFT_F:
-        case SFT_J:
-            return TAPPING_TERM + 30;
-        default:
-            return TAPPING_TERM;
-    }
-}
-#endif
-
+#include "feature/tapping_term.c"
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 

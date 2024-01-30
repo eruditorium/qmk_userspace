@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
   | Ctrl/- | Z/Ctrl | X/Gui  |  C/Alt |   V    |   B    |                    |   N    |   M    | ,/RAlt | ./Gui  | //Ctrl | Shift  |
   `--------+--------+--------+--------+--------+--------+--------.  .--------+--------+--------+--------+--------+--------+--------'
-                                      |  BSPC  | LW/ESC | ENTER  |  |  SPACE | RS/TAB |RAlt/Del|
+                                      |  BSPC  |  LW/-  | ENTER  |  |  SPACE | RS/TAB |RAlt/Del|
                                       `--------------------------'  `--------------------------'    
 */                                      
   [_QWERTY] = LAYOUT_split_3x6_3(
@@ -118,19 +118,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
 // Raise
 //  ,-----------------------------------------------------.                    ,-----------------------------------------------------.
-//  |   ~    |    !   |   @    |   #    |   $    |   %    |                    |    ^   │    &   │    Ü   │    °   │    /   │   Del  |
+//  |   ~    |    !   |   @    |   #    |   $    |   %    |                    |    ^   │    Ü   │    &   │    °   │    Ö   │   Del  |
 //  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-//  |        │    Ä   │    è   │   SZ   │   é    │    ç   │                    │    µ   │    £   │    €   │        │    Ö   │   \    |
+//  |        │    Ä   │   SZ   │   è    │   é    │    ç   │                    │    /   │    £   │    €   │        │    µ   │   \    |
 //  |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 //  |        │    `   │    ~   │   CUE  │        │        │                    │    |   │        │    ²   │   ³    │        │        │
 //  `--------+--------+--------+--------+--------+--------+--------.  .--------+--------+--------+--------+--------+--------+--------'
 //                                      |        │ ADJUST │    -   │  │    ▼   │    ▼   │    ▼   │
 //                                      `--------------------------'  `--------------------------'
   [_RAISE] = LAYOUT_split_3x6_3(
-    _______, KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                    KC_CIRC,    KC_AMPR,          RALT(KC_Y), Celsius,    KC_BSLS,    KC_DEL,
-    _______, RALT(KC_Q),   RALT(KC_F), RALT(KC_S), RALT(KC_E), LSFT(RALT(KC_COMM)),        RALT(KC_M), LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_P), KC_BSLS,
-    _______, LSFT(KC_GRV), KC_TILD,    RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE,    XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,    _______,
-                                                   _______,    ADJUST,  KC_UNDS,  _______, _______,    _______
+    _______, KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                    KC_CIRC, RALT(KC_Y),       KC_AMPR,    Celsius,    RALT(KC_P), KC_DEL,
+    _______, RALT(KC_Q),   RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)),        KC_BSLS, LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_M), KC_BSLS,
+    _______, LSFT(KC_GRV), KC_TILD,    RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE, XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,    _______,
+                                                   _______,    ADJUST,  KC_UNDS,  _______, _______, _______
   ),
  
 
