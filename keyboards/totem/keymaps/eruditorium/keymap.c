@@ -15,7 +15,7 @@
 // qmk compile -j 0 -kb geist/totem -km eruditorium
 // qmk c2json -o ~/totem-nico.json -km eruditorium -kb geist/totem keymap.c --no-cpp
 //
-
+//
 #include QMK_KEYBOARD_H
 #include "features/select_word.h"
 #include "features/combos.c"
