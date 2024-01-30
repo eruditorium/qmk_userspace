@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_CAPS,   KC_NUM,   KC_UP,    KC_PGUP,  KC_LCBR,   KC_RCBR,  KC_7,     KC_8,     KC_9,     KC_PPLS,
               KC_NUM,    KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_4,     KC_5,     KC_6,     KC_MINS,  
     SNAP,     XXXXXXX,   KC_END,   C(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
-                                   KC_DEL,   _______,  _______,    KC_UNDS,  ADJUST,   KC_0
+                                   KC_DEL,   _______,  _______,   KC_UNDS,  ADJUST,   KC_0
  ),
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_RAISE] = LAYOUT(
  //╷         ╷            ╷           ╷           ╷           ╷          ╷         ╷         ╷                 ╷            ╷            ╷           ╷         ╷
-              KC_EXLM,     KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,             KC_CIRC,  RALT(KC_Y),       KC_AMPR,     RALT(KC_P),  Celsius
+              KC_EXLM,     KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,             KC_CIRC,  RALT(KC_Y),       KC_AMPR,     RALT(KC_P),  Celsius,
               RALT(KC_Q),  RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)), KC_BSLS,  LSFT(RALR(KC_4)), RALT(KC_5),  RALT(KC_4),  RALT(KC_M), 
     SELWORD,  LSFT(KC_GRV),KC_TILD,    RALT(KC_C), XXXXXXX,    XXXXXXX,             KC_PIPE,  XXXXXXX,          RALT(KC_2),  RALT(KC_3),  XXXXXXX,  _______, 
                                        _______,    ADJUST,     KC_MINS,             _______,  _______,     _______
