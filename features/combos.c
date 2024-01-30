@@ -30,5 +30,5 @@ combo_t key_combos[] = {
   [WS_HOME] = COMBO(ws_combo, KC_HOME),
   [SX_END] = COMBO(sx_combo, KC_END),
   [RF_PGUP] = COMBO(rf_combo, KC_PGUP),
-  [FV_PGUP] = COMBO(fv_combo, KC_PGDWN),
+  [FV_PGDWN] = COMBO(fv_combo, KC_PGDWN),
 };
