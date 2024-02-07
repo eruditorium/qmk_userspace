@@ -57,6 +57,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 // #define AUTO_SHIFT_NO_SETUP
+#undef AUTO_SHIFT_MODIFIERS
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -156,13 +157,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_WIDTH 8
 #define OLED_FONT_HEIGHT 8
 #define OLED_FONT_END 0x9F
-
-#ifndef NO_DEBUG
-    #define NO_DEBUG
-#endif // !NO_DEBUG
-#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
-    #define NO_PRINT
-#endif // !NO_PRINT
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
