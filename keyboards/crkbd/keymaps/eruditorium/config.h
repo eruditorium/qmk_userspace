@@ -153,13 +153,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_HEIGHT 8
 #define OLED_FONT_END 0x9F
 
-// Add these flags to your rules.mk file:
-// This enables Link Time Optimization, saving a significant amount of space. Because the Macro and Function features are incompatible with Link Time Optimization, disable those features in config.h:
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
-// Drashna, on QMK issue 3224, paraphrased
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+#ifndef NO_DEBUG
+    #define NO_DEBUG
+#endif // !NO_DEBUG
+#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+    #define NO_PRINT
+#endif // !NO_PRINT
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
