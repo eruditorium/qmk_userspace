@@ -50,9 +50,6 @@ enum custom_keycodes {
     LOWER,
     RAISE,
     ADJUST,
-    MC_QUOT,
-    SNAP,
-    SELWORD,
 };
 
 #include "features/macro.c"
@@ -105,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT_split_3x6_3(
     _______, KC_CAPS, KC_HOME, KC_UP,   KC_PGUP,  KC_LCBR,                   KC_RCBR,   KC_7,   KC_8,   KC_9,   KC_PPLS,  KC_DEL,
     _______, KC_QUOT, KC_LEFT, KC_DOWN, KC_RGHT,  KC_LBRC,                   KC_RBRC,   KC_4,   KC_5,   KC_6,   KC_MINS,  KC_EQL,
-    _______, SNAP,    KC_END,  C(KC_S), KC_PGDN,  KC_LPRN,                   KC_RPRN,   KC_1,   KC_2,   KC_3,   KC_PAST,  _______,
+    _______, XXXXXXXX, KC_END,  C(KC_S), KC_PGDN,  KC_LPRN,                   KC_RPRN,   KC_1,   KC_2,   KC_3,   KC_PAST,  _______,
                                         _______,  _______, _______, KC_UNDS, ADJUST,    KC_0
   ),
 
@@ -160,11 +157,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
-
-// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ M A C R O S                                                                                                            │
-// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ H O M E  R O W  M O D S                                                                                                │
