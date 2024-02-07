@@ -28,6 +28,9 @@ TAP_DANCE_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 #define DYNAMIC_KEYMAP_LAYER_COUNT 3
 
+# auto shift
+AUTO_SHIFT_ENABLE = yes
+
 # https://docs.qmk.fm/#/feature_caps_word
 # make sure COMMAN_ENABLE = no
 CAPS_WORD_ENABLE = yes
