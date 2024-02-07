@@ -252,7 +252,9 @@ void fp_render_layer_state(void) {
 }
 
 void fp_render_modifier_state(void) {
-    uint8_t modifiers = get_mods() | get_oneshot_mods();
+    //uint8_t modifiers = get_mods() | get_oneshot_mods();
+    uint8_t modifiers = get_mods();
+
 
     oled_set_cursor(0, 15);
     // oled_write_char(shift, modifiers & MOD_MASK_SHIFT);
@@ -299,30 +301,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         animation_timeout = timer_read32();
         frame_timer       = timer_read32();
         oled_on();
-    }
-
-    //if (!process_select_word(keycode, record, SELWORD)) { return false; }
-    
-    switch (keycode) {
-
-        // ┌─────────────────────────────────────────────────┐
-        // │ d e a d   k e y s                               │
-        // └─────────────────────────────────────────────────┘
-        case MC_QUOT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_QUOT) SS_TAP(X_SPC));
-            }
-            break;
-
-        // ┌─────────────────────────────────────────────────┐
-        // │ p r o d u c t i v i t y                         │
-        // └─────────────────────────────────────────────────┘
-
-      case SNAP:
-          if (record->event.pressed) {
-            SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-          }
-          break;
     }
     return true;
 }
