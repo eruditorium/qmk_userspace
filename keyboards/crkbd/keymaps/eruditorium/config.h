@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* QMK */
 #define TAPPING_TERM 160
 // #define QUICK_TAP_TERM 0
-#define TAPPING_TERM_PER_KEY
+// #define TAPPING_TERM_PER_KEY
 // #define DYNAMIC_TAPPING_TERM_INCREMENT 10
 
 /* Miryoku */
@@ -53,11 +53,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 // #define AUTO_SHIFT_NO_SETUP
-#undef AUTO_SHIFT_MODIFIERS
+#define AUTO_SHIFT_MODIFIERS
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
-// #define NO_ACTION_ONESHOT
 
 // source: https://jasoncarloscox.com/blog/combo-mods/
 // #define COMBO_TERM 25        // how quickly all combo keys must be pressed in succession to trigger
@@ -87,7 +86,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef RGB_MATRIX_ENABLE
     #undef RGB_MATRIX_KEYPRESSES // reacts to keypresses
     #undef RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
-    #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+    #undef RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
     #undef RGB_MATRIX_FRAMEBUFFER_EFFECTS
     // #   define RGB_MATRIX_LED_PROCESS_LIMIT (RGB_MATRIX_LED_COUNT + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
     // #   define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
@@ -156,7 +155,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Activate by double tapping Left Shift:
 // alternative: #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
@@ -169,4 +168,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Drashna, on QMK issue 3224, paraphrased
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+#define NO_ACTION_ONESHOT
+
 
