@@ -13,8 +13,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case CTL_Z:
         case CTL_SLSH:
             return TAPPING_TERM + 50;
-        case SFT_F:
-        case SFT_J:
+        case SHT_F:
+        case SHT_J:
             return TAPPING_TERM + 30;
         default:
             return TAPPING_TERM;
