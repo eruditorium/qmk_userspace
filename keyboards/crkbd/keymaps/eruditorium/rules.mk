@@ -35,14 +35,6 @@ AUTO_SHIFT_ENABLE = yes
 # make sure COMMAN_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
-// Add these flags to your rules.mk file:
-// This enables Link Time Optimization, saving a significant amount of space. Because the Macro and Function features are incompatible with Link Time Optimization, disable those features in config.h:
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
-// Drashna, on QMK issue 3224, paraphrased
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-
 #-----------------------------------------------------------------------------
 # getreuer
 #-----------------------------------------------------------------------------
