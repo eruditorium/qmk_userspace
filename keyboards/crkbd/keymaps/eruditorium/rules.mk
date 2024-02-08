@@ -4,11 +4,12 @@
 #
 OLED_ENABLE = yes
 
-MOUSEKEY_ENABLE = no        # Mouse keys
+MOUSEKEY_ENABLE = no        # Mouse keys (+4700)
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
+UNICODE_ENABLE = no         # Unicode
 
 RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
 RGB_MATRIX_ENABLE = no
