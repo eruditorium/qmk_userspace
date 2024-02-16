@@ -80,7 +80,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 17
 #endif
 
-//#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #undef OLED_FONT_H
 #undef OLED_FONT_WIDTH
 #undef OLED_FONT_HEIGHT
@@ -101,10 +100,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // This enables Link Time Optimization, saving a significant amount of space.
 // Because the Macro and Function features are incompatible with Link Time Optimization,
 // disable those features in config.h:
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
-// Drashna, on QMK issue 3224, paraphrased
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+// Drashna, on QMK issue 3224, paraphrased
 #define NO_ACTION_ONESHOT
 #define DISABLE_LEADER

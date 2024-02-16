@@ -14,12 +14,6 @@ UNICODE_ENABLE = no         # Unicode
 RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
 RGB_MATRIX_ENABLE = no
 
-# to reduce size of firmware
-# https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
-# Add these flags to your rules.mk file: EXTRAFLAGS += -flto
-# Drashna, on QMK issue 3224, paraphrased
-EXTRAFLAGS += -flto
-LTO_ENABLE = yes
 
 QMK_SETTINGS = no
 DYNAMIC_MACRO_ENABLE = no
@@ -34,7 +28,7 @@ AUTO_SHIFT_ENABLE = yes
 
 # https://docs.qmk.fm/#/feature_caps_word
 # make sure COMMAN_ENABLE = no
-CAPS_WORD_ENABLE = yes
+# CAPS_WORD_ENABLE = yes
 
 #-----------------------------------------------------------------------------
 # getreuer
@@ -53,3 +47,10 @@ CAPS_WORD_ENABLE = yes
 
 # https://docs.qmk.fm/#/custom_quantum_functions?id=deferred-execution
 DEFERRED_EXEC_ENABLE = yes
+
+# to reduce size of firmware
+# https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
+# Add these flags to your rules.mk file: EXTRAFLAGS += -flto
+# Drashna, on QMK issue 3224, paraphrased
+EXTRAFLAGS += -flto
+LTO_ENABLE = yes
