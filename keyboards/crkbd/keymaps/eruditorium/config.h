@@ -105,3 +105,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Drashna, on QMK issue 3224, paraphrased
 #define NO_ACTION_ONESHOT
 #define DISABLE_LEADER
+
+// configure the amount of keys a combo can be composed of
+#define EXTRA_SHORT_COMBOS
