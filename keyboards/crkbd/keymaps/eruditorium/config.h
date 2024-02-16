@@ -53,7 +53,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 // #define AUTO_SHIFT_NO_SETUP
-#define AUTO_SHIFT_MODIFIERS
+//#define AUTO_SHIFT_MODIFIERS
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -160,8 +160,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // alternative: #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // Add these flags to your rules.mk file:
-// This enables Link Time Optimization, saving a significant amount of space. 
-// Because the Macro and Function features are incompatible with Link Time Optimization, 
+// This enables Link Time Optimization, saving a significant amount of space.
+// Because the Macro and Function features are incompatible with Link Time Optimization,
 // disable those features in config.h:
 // #define NO_ACTION_MACRO
 // #define NO_ACTION_FUNCTION
@@ -170,6 +170,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_FUNCTION
 #define NO_ACTION_ONESHOT
 #define DISABLE_LEADER
-
-
-
