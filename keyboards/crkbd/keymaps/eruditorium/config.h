@@ -64,7 +64,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define COMBO_HOLD_TERM 175  // how long at least one of the combo keys must be held to trigger
 
 #ifdef RGBLIGHT_ENABLE
-    #undef RGBLED_NUM
     #undef RGBLIGHT_EFFECT_BREATHING
     #undef RGBLIGHT_EFFECT_RAINBOW_MOOD
     #undef RGBLIGHT_EFFECT_KNIGHT
@@ -75,7 +74,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #undef RGBLIGHT_EFFECT_RGB_TEST
     #undef RGBLIGHT_EFFECT_ALTERNATING
     #undef RGBLIGHT_EFFECT_TWINKLE
-    //#define RGBLED_NUM 27
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
