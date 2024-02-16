@@ -73,7 +73,7 @@ combo_t key_combos[] = {
   [VB_LEFTPARENTHESIS] = COMBO(vb_combo, KC_LPRN),
 
   [YU_RIGHTBRACE] = COMBO(yu_combo, KC_RCBR),
-  [HJ_RIGHTBRACKET] = COMBO(hj_combo, KC_RBCR),
+  [HJ_RIGHTBRACKET] = COMBO(hj_combo, KC_RBRC),
   [NM_RIGHTPARENTHESIS] = COMBO(nm_combo, KC_RPRN),
 
   [GB_MINUS] = COMBO(gb_combo, KC_MINS),
