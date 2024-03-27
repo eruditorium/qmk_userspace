@@ -32,8 +32,8 @@ const uint16_t PROGMEM yu_combo[] = {KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM hj_combo[] = {KC_H, SHT_J, COMBO_END};
 const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
 
-const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM mc_combo[] = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM cv_combo[] = {ALT_C, KC_V, COMBO_END};
+const uint16_t PROGMEM mc_combo[] = {KC_M, ALT_COMM, COMBO_END};
 
 const uint16_t PROGMEM df_combo[] = {SHT_F, KC_D, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {SHT_J, KC_K, COMBO_END};
