@@ -1,14 +1,4 @@
-name: QMK userspace Build NEW
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - "keyboards/**"
-      - "keymaps/*"
-      - ".github/workflows/*"
-      - "*.def"
-      - "*.c"
-      - "*.h"
+name: qmk new
 
 steps:
   - uses: actions/checkout@v1
