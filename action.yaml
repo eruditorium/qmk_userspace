@@ -1,0 +1,25 @@
+name: "QMK Keyboard firmware build"
+description: "Build QMK firmware using github actions"
+inputs:
+  keymap-path:
+    description: "Path to Your keymap folder, must be same as qmk_firmware path"
+    required: true
+    default: "keyboards/crkbd/rev1/keymaps/eruditorium"
+  keyboard:
+    description: "Keyboard name"
+    required: true
+    default: "crkbd/rev1"
+  keymap:
+    description: "Keymap name, must match `keymap-path` folder"
+    required: true
+    default: "eruditorium"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.keymap-path }}
+    - ${{ inputs.keyboard }}
+    - ${{ inputs.keymap }}
+branding:
+  icon: "anchor"
+  color: "red"
