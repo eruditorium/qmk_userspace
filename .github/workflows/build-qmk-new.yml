@@ -1,30 +1,23 @@
-name: qmk new
+name: "QMK Firmware Build NEW"
 on:
-  workflow_dispatch:
+  pull_request:
   push:
-    paths:
-      - "keyboards/**"
-      - "keymaps/*"
-      - ".github/workflows/*"
-      - "*.def"
-      - "*.c"
-      - "*.h"
+    branches:
+      - main
+      - "releases/*"
 
 jobs:
-  list-user-keymaps:
+  test:
+    name: Action Test
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v1
-
       - name: Build Firmware
         uses: ./
         with:
           keymap-path: "keyboards/crkbd/rev1/keymaps/eruditorium"
           keyboard: "crkbd/rev1"
           keymap: "eruditorium"
-
       - name: Upload a Firmware
         uses: actions/upload-artifact@v3.1.2
         with:
