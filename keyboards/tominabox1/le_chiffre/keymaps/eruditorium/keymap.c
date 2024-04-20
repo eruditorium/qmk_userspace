@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
   [_LOWER] = LAYOUT(
     KC_CAPS, KC_HOME, KC_UP,   KC_PGUP,  KC_LCBR,     KC_MUTE,      KC_RCBR,   KC_7,   KC_8,   KC_9,   KC_PPLS,
-    KC_QUOT, KC_LEFT, KC_DOWN, KC_RGHT,  KC_LBRC,                   KC_RBRC,   KC_4,   KC_5,   KC_6,   KC_MINS,
+    KC_QUOT, KC_LEFT, KC_DOWN, KC_RGHT,  KC_LBRC,                   KC_RBRC,   KC_4,   KC_5,   KC_6,   KC_EQL,
     XXXXXXX, KC_END,  C(KC_S), KC_PGDN,  KC_LPRN,                   KC_RPRN,   KC_1,   KC_2,   KC_3,   KC_PAST,
-                               _______, _______,                    ADJUST,    KC_0
+                                _______, _______,                   ADJUST,    KC_0
   ),
 
 /*
@@ -93,8 +93,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT(
     KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,     KC_MUTE,       KC_CIRC, RALT(KC_Y),       KC_AMPR,    Celsius,    RALT(KC_P),
     RALT(KC_Q),   RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)),        KC_BSLS, LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_M),
-    LSFT(KC_GRV), _______,    RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE, XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,
-                                          _______,    ADJUST,                     _______, _______
+    LSFT(KC_GRV), KC_GRV,     RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE, XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,
+                                          KC_ESC,     ADJUST,                     _______, KC_TAB
   ),
 
 
@@ -107,10 +107,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
 // Adjust
   [_ADJUST] = LAYOUT(
-    RGB_TOG, RGB_MOD, RGB_VAI, RGB_VAD, KC_PSCR,     KC_MUTE,      RGB_HUI, KC_F7,   KC_F8,   KC_F9,   KC_F12,
-    XXXXXXX, XXXXXXX, KC_MSTP, KC_MNXT, KC_VOLU,                   RGB_HUD, KC_F4,   KC_F5,   KC_F6,   KC_F11,
-    XXXXXXX, XXXXXXX, KC_MPLY, KC_MPRV, KC_VOLD,                   XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F10,
-                               _______, _______,                   _______, _______
+    QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_MUTE,      KC_MUTE, KC_F7,   KC_F8,   KC_F9,   KC_F12,
+    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,                   KC_VOLU, KC_F4,   KC_F5,   KC_F6,   KC_F11,
+    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                   KC_VOLD, KC_F1,   KC_F2,   KC_F3,   KC_F10,
+                               KC_ESC,  _______,                   _______, KC_TAB
   )
 };
 /*
