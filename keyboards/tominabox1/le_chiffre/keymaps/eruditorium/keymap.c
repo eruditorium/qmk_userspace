@@ -27,7 +27,7 @@
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
-enum chiffre_layers {
+enum layers {
     _QWERTY = 0,
     _LOWER,
     _RAISE,
