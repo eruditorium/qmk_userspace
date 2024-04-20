@@ -10,7 +10,7 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
 UNICODE_ENABLE = no         # Unicode
-ENCODER_MAP_ENABLE = yes
+ENCODER_MAP_ENABLE = no
 
 RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
 RGB_MATRIX_ENABLE = no
