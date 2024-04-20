@@ -55,23 +55,6 @@
 // #define COMBO_MUST_HOLD_MODS // if a combo triggers a modifier, only trigger when the combo is held
 // #define COMBO_HOLD_TERM 175  // how long at least one of the combo keys must be held to trigger
 
-#ifdef RGBLIGHT_ENABLE
-    #undef RGBLIGHT_EFFECT_BREATHING
-    #undef RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #undef RGBLIGHT_EFFECT_KNIGHT
-    #undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #undef RGBLIGHT_EFFECT_SNAKE
-    #undef RGBLIGHT_EFFECT_CHRISTMAS
-    #undef RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #undef RGBLIGHT_EFFECT_RGB_TEST
-    #undef RGBLIGHT_EFFECT_ALTERNATING
-    #undef RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
-#endif
-
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
 //#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
