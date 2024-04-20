@@ -12,7 +12,7 @@ CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
-AUTO_SHIFT = yes
+AUTO_SHIFT = no
 
 DYNAMIC_MACRO_ENABLE = no
 COMBO_ENABLE = yes
