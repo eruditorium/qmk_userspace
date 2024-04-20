@@ -14,142 +14,118 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#include "features/select_word.h"
+// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ D E F I N I T I O N S                                                                                                  │
+// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
-enum layers {
-    _BASE,
-    _NUM_SYM,
-    _NAV
+// ┌─────────────────────────────────────────────────┐
+// │ d e f i n e   l a y e r s                       │
+// └─────────────────────────────────────────────────┘
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum chiffre_layers {
+    _QWERTY = 0,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
 };
 
-#define KC_NUM_SPC LT(_NUM_SYM, KC_SPC)
-#define KC_GA LGUI_T(KC_A)
-#define KC_AS LALT_T(KC_S)
-#define KC_CD LCTL_T(KC_D)
-#define KC_SF LSFT_T(KC_F)
-#define KC_SJ RSFT_T(KC_J)
-#define KC_CK RCTL_T(KC_K)
-#define KC_AL RALT_T(KC_L)
-#define KC_GSCLN RGUI_T(KC_SCLN)
+// ┌─────────────────────────────────────────────────┐
+// │ d e f i n e   k e y c o d e s                   │
+// └─────────────────────────────────────────────────┘
+enum custom_keycodes {
+    QWERTY = SAFE_RANGE,
+    LOWER,
+    RAISE,
+    ADJUST,
+};
 
-// clang-format off
+#include "features/macro.c"
+#include "features/combos.c"
+
+// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ K E Y M A P S                                                                                                          │
+// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT(
-    KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,  KC_MPLY,  KC_Y,   KC_U,    KC_I,   KC_O,     KC_P,
-   KC_GA,  KC_AS,  KC_CD,  KC_SF,   KC_G,            KC_H,  KC_SJ,   KC_CK,  KC_AL, KC_GSCLN,
-    KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,            KC_N,   KC_M, KC_COMM, KC_DOT,  KC_SLSH,
-                         KC_LCTL, KC_ENT,            KC_NUM_SPC, MO(_NAV)
+
+/*
+   ┌─────────────────────────────────────────────────┐
+   │ q w e r t y                                     │
+   └─────────────────────────────────────────────────┘
+*/
+  [_QWERTY] = LAYOUT(
+    KC_Q,    KC_W,    KC_E,   KC_R,      KC_T,         KC_MUTE,       KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,
+    KC_A,    KC_S,    KC_D,   SHT_F,     KC_G,                        KC_H,    SHT_J,   KC_K,     KC_L,    KC_SCLN,
+    CTL_Z,   GUI_X,   ALT_C,  KC_V,      KC_B,                        KC_N,    KC_M,    ALT_COMM, GUI_DOT, CTL_SLSH,
+                              KC_BSPC,   LT(LOWER, KC_ENT),           LT(RAISE, KC_SPACE),   ALT_DEL
   ),
 
-  [_NUM_SYM] = LAYOUT(
-        KC_1,  KC_2,     KC_3,     KC_4,      KC_5,  KC_TRNS,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,
-    KC_EXLM,  KC_AT,  KC_HASH,   KC_DLR,   KC_PERC,            KC_CIRC,  KC_AMPR,  KC_ASTR, KC_EQUAL,  KC_MINS,
-    KC_BSLS,KC_LCBR,  KC_LBRC,  KC_LPRN,   KC_UNDS,            KC_RPRN,  KC_RBRC,  KC_RCBR,   KC_DOT,   KC_GRV,
-                                KC_CAPS,   KC_TRNS,            KC_TRNS,  KC_TRNS
+/*
+   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+
+
+   ┌─────────────────────────────────────────────────┐
+   │ l o w e r                                       │
+   └─────────────────────────────────────────────────┘
+*/
+  [_LOWER] = LAYOUT(
+    KC_CAPS, KC_HOME, KC_UP,   KC_PGUP,  KC_LCBR,     KC_MUTE,      KC_RCBR,   KC_7,   KC_8,   KC_9,   KC_PPLS,
+    KC_QUOT, KC_LEFT, KC_DOWN, KC_RGHT,  KC_LBRC,                   KC_RBRC,   KC_4,   KC_5,   KC_6,   KC_MINS,
+    XXXXXXX, KC_END,  C(KC_S), KC_PGDN,  KC_LPRN,                   KC_RPRN,   KC_1,   KC_2,   KC_3,   KC_PAST,
+                               _______, _______,                    ADJUST,    KC_0
   ),
 
-  [_NAV] = LAYOUT(
-      QK_BOOT,  _______,  AG_NORM,  AG_SWAP,  DB_TOGG, KC_TRNS,   KC_GRV,  KC_PGDN,    KC_UP,  KC_PGUP,  KC_SCLN,
-    RGB_TOG,  RGB_HUI,  RGB_SAI,  RGB_VAI,  KC_NO,           KC_HOME,  KC_LEFT,  KC_DOWN,  KC_RGHT,   KC_END,
-    RGB_MOD,  RGB_HUD,  RGB_SAD,  RGB_VAD,  KC_NO,           KC_MINS,    KC_INT1,  KC_COMM,   KC_DOT,  KC_BSLS,
-                                  KC_TRNS,KC_TRNS,           KC_TRNS,  KC_TRNS
+/*
+   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+
+   ┌─────────────────────────────────────────────────┐
+   │ r a i s e                                       │
+   └─────────────────────────────────────────────────┘
+*/
+  [_RAISE] = LAYOUT(
+    KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,     KC_MUTE,       KC_CIRC, RALT(KC_Y),       KC_AMPR,    Celsius,    RALT(KC_P),
+    RALT(KC_Q),   RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)),        KC_BSLS, LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_M),
+    LSFT(KC_GRV), _______,    RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE, XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,
+                                          _______,    ADJUST,                     _______, _______
+  ),
+
+
+/*
+   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+
+   ┌─────────────────────────────────────────────────┐
+   │ a d j u s t                                     │
+   └─────────────────────────────────────────────────┘
+   */
+// Adjust
+  [_ADJUST] = LAYOUT(
+    RGB_TOG, RGB_MOD, RGB_VAI, RGB_VAD, KC_PSCR,     KC_MUTE,      RGB_HUI, KC_F7,   KC_F8,   KC_F9,   KC_F12,
+    XXXXXXX, XXXXXXX, KC_MSTP, KC_MNXT, KC_VOLU,                   RGB_HUD, KC_F4,   KC_F5,   KC_F6,   KC_F11,
+    XXXXXXX, XXXXXXX, KC_MPLY, KC_MPRV, KC_VOLD,                   XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F10,
+                               _______, _______,                   _______, _______
   )
 };
-// clang-format on
+/*
+   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
 
-#if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] =  {ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
-    [_NUM_SYM] = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
-    [_NAV] = { ENCODER_CCW_CW(KC_PGDN, KC_PGUP) }
-};
-#endif
+// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ H O M E  R O W  M O D S                                                                                                │
+// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
-#ifdef COMBO_ENABLE
-enum combo_events {
-    COMBO_BSPC,
-    COMBO_NUMBAK,
-    COMBO_TAB,
-    COMBO_ESC,
-    COMBO_DEL,
-};
-
-const uint16_t PROGMEM combo_bspc[]   = {KC_O, KC_P, COMBO_END};
-const uint16_t PROGMEM combo_numbak[] = {KC_0, KC_9, COMBO_END};
-const uint16_t PROGMEM combo_tab[]    = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_esc[]    = {KC_E, KC_W, COMBO_END};
-const uint16_t PROGMEM combo_del[]    = {KC_MINS, KC_EQL, COMBO_END};
-
-combo_t key_combos[] = {
-    [COMBO_BSPC] = COMBO(combo_bspc, KC_BSPC),
-    [COMBO_NUMBAK] = COMBO(combo_numbak, KC_BSPC),
-    [COMBO_TAB] = COMBO(combo_tab, KC_TAB),
-    [COMBO_ESC] = COMBO(combo_esc, KC_ESC),
-    [COMBO_DEL] = COMBO(combo_del, KC_DEL)
-};
-#endif
-
-#ifdef OLED_ENABLE
-
-// Add additional layer names here if desired. Only first 5 characters will be copied to display.
-const char PROGMEM layer_base[]    = "BASE";
-const char PROGMEM layer_num_sym[] = " SYM";
-const char PROGMEM layer_nav[]     = " NAV";
-// Add layer name variables to array here. Make sure these are in order.
-const char* const PROGMEM layer_names[] = {
-    layer_base,
-    layer_num_sym,
-    layer_nav
-};
-
-static char oled_layer_buf[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-static layer_state_t top_layer_cache;
-
-/* BEGIN STANDARD QMK FUNCTIONS */
-bool oled_task_user(void) {
-    oled_write_raw_P(lechiffre_logo, sizeof(lechiffre_logo));
-    // Renders the current keyboard state (layer, lock, caps, scroll, etc);
-    oled_set_cursor(0, 3);
-    oled_write_P(oled_section_break, false);
-    render_layer_status(oled_layer_buf);
-    oled_write_P(oled_section_break, false);
-    render_mod_status(get_mods() | get_oneshot_mods());
-    oled_write_P(oled_section_break, false);
-    render_keylock_status(host_keyboard_led_state());
-    oled_write_P(oled_section_break, false);
-    render_keylogger_status();
-
-    return false;
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-    if (record->event.pressed) {
-        add_keylog(keycode, record);
-    }
-
-    return true;
-}
-
-// If we don't force an update during initialization, the layer name buffer will start out blank.
-layer_state_t default_layer_state_set_user(layer_state_t state) {
-    update_layer_namebuf(get_highest_layer(state), true);
-    return state;
-}
-layer_state_t layer_state_set_user(layer_state_t state) {
-    update_layer_namebuf(get_highest_layer(state | default_layer_state), false);
-    return state;
-}
-
-/* END STANDARD QMK FUNCTIONS */
-/* BEGIN CUSTOM HELPER FUNCTION FOR OLED */
-// Avoid excessive copying by only updating the layer name buffer when the layer changes
-void update_layer_namebuf(layer_state_t layer, bool force_update) {
-    if (force_update || layer != top_layer_cache) {
-        top_layer_cache = layer;
-        if (layer < ARRAY_SIZE(layer_names)) {
-            memcpy_P(oled_layer_buf, pgm_read_ptr(&layer_names[layer]), ARRAY_SIZE(oled_layer_buf) - 1);
-        } else {
-            memcpy(oled_layer_buf, get_u8_str(layer, ' '), ARRAY_SIZE(oled_layer_buf) - 1);
-        }
+#ifdef TAPPING_TERM_PER_KEY
+    uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SHT_F:
+        case SHT_J:
+            return TAPPING_TERM - 50;
+        default:
+            return TAPPING_TERM;
     }
 }
 #endif
