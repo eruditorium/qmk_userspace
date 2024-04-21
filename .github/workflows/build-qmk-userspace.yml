@@ -21,7 +21,7 @@ jobs:
         run: echo "matrix=$(find keyboards -regex ".*keymaps" | sed "s|keyboards/\(.*\)/keymaps|\1|"| jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
       - run: echo $GITHUB_OUTPUT
 
-  compile-userspace-keymaps:
+  compile-userpace-keymaps:
     runs-on: ubuntu-latest
     container: qmkfm/qmk_cli
     needs: list-user-keymaps
@@ -67,9 +67,8 @@ jobs:
       - name: Create json
         run: qmk c2json -o ${{ matrix.keyboards }}.json -km ${{ github.actor }} -kb ${{ matrix.keyboards }} keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
         
-        
       - name: Archive firmware
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3.1.2
         with:
             retention-days: 60
             compression-level: 0
@@ -80,11 +79,3 @@ jobs:
               *.uf2
               *.json
               
-  merge:
-    runs-on: ubuntu-latest
-    needs: compile-userspace-keymaps
-    steps:
-      - name: qmk-user-firmware 
-        uses: actions/upload-artifact/merge@v4
-        with: 
-          delete-merged: true
