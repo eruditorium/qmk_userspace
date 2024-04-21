@@ -80,7 +80,7 @@ jobs:
               *.uf2
               *.json
               
-    merge:
+merge:
     runs-on: ubuntu-latest
     needs: compile-qmk-user-keymaps
     steps:
