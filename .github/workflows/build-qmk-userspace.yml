@@ -69,12 +69,12 @@ jobs:
         
         
       - name: Archive firmware
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4
         with:
-          retention-days: 60
-          name: qmk_user_firmware
-          path: |
-            *.hex
-            *.bin
-            *.uf2
-            *.json
+            retention-days: 60
+            compression-level: 0
+            name: qmk_${{ steps.keyboard-name.outputs.name }}
+            path: |
+              *.hex
+              *.bin
+              *.uf2
