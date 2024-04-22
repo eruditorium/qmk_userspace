@@ -16,7 +16,7 @@
 #pragma once
 
 /* QMK */
-#define TAPPING_TERM 160
+#define TAPPING_TERM 180
 // #define QUICK_TAP_TERM 0
 #define TAPPING_TERM_PER_KEY
 // #define DYNAMIC_TAPPING_TERM_INCREMENT 10

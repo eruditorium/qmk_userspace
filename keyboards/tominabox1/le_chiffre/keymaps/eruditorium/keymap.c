@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ H O M E  R O W  M O D S                                                                                                │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// zs▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+// ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 
 // source: https://getreuer.info/posts/keyboards/achordion/index.html
@@ -135,3 +135,47 @@ void matrix_scan_user(void) {
   achordion_task();
 }
 
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode, keyrecord_t* other_record) {
+  // Exceptionally consider the following chords as holds, even though they
+  // are on the same hand in Magic Sturdy.
+  switch (tap_hold_keycode) {
+    case CTL_Z:
+      if (other_keycode == GUI_X || other_keycode == ALT_C || other_keycode == KC_V) {
+        return true;
+      }
+	  break;
+	case GUI_X:
+	  if (other_keycode == KC_E) {
+        return true;
+      }
+	  break;
+  }
+
+  // Also allow same-hand holds when the other key is in the rows below the
+  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) {
+    return true;
+  }
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  return 800;  // Use a timeout of 800 ms.
+}
+
+uint16_t achordion_streak_timeout(uint16_t tap_hold_keycode) {
+  if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+    return 0;  // Disable streak detection on layer-tap keys.
+  }
+
+  // Otherwise, tap_hold_keycode is a mod-tap key.
+  uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
+  if ((mod & MOD_LSFT) != 0) {
+    return 0;  // Disable for Shift mod-tap keys.
+  } else {
+    return 100;
+  }
+}
