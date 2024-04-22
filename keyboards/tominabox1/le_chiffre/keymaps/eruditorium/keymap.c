@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    └─────────────────────────────────────────────────┘
 */
   [_RAISE] = LAYOUT(
-    KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,     KC_MUTE,       KC_CIRC, RALT(KC_Y),       KC_AMPR,    RALT(KC_P), Celsius,zs
+    KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,     KC_MUTE,       KC_CIRC, RALT(KC_Y),       KC_AMPR,    RALT(KC_P), Celsius,
     RALT(KC_Q),   RALT(KC_S), RALT(KC_F), RALT(KC_E), LSFT(RALT(KC_COMM)),        KC_BSLS, LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_M),
     LSFT(KC_GRV), KC_GRV,     RALT(KC_C), XXXXXXX,    XXXXXXX,                    KC_PIPE, XXXXXXX,          RALT(KC_2), RALT(KC_3), XXXXXXX,
                                           KC_ESC,     ADJUST,                     _______, KC_TAB
