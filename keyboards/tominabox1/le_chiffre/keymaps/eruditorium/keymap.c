@@ -152,24 +152,18 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
 	  break;
   }
 
-  // Also allow same-hand holds when the other key is in the rows below the
-  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
-  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) {
-    return true;
-  }
-
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 800;  // Use a timeout of 800 ms.
+  return 500;  // Use a timeout of 500 ms.
 }
 
 uint16_t achordion_streak_timeout(uint16_t tap_hold_keycode) {
   if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
     return 0;  // Disable streak detection on layer-tap keys.
-  }
+  }zs
 
   // Otherwise, tap_hold_keycode is a mod-tap key.
   uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
@@ -179,3 +173,11 @@ uint16_t achordion_streak_timeout(uint16_t tap_hold_keycode) {
     return 100;
   }
 }
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [_BASE] =  {ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
+    [_NUM_SYM] = { ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+    [_NAV] = { ENCODER_CCW_CW(KC_PGDN, KC_PGUP) }
+};
+#endif
