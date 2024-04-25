@@ -3,7 +3,7 @@
 #   the appropriate keymap folder that will get included automatically
 #
 OLED_ENABLE = no
-ENCODER_MAP_ENABLE = no
+ENCODER_MAP_ENABLE = yes
 
 VIAL_ENABLE = no
 QMK_SETTINGS = no

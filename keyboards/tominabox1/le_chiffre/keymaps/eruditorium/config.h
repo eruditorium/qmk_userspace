@@ -15,12 +15,18 @@
  */
 #pragma once
 
+// Unfortunately, some applications drop or misorder fast key events. This is a
+// partial fix to slow down the rate at which macros are sent.
+#define TAP_CODE_DELAY 12
+
 /* QMK */
-#define TAPPING_TERM 180
-// #define QUICK_TAP_TERM 0
+#define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY
-// #define DYNAMIC_TAPPING_TERM_INCREMENT 10
 #define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM_PER_KEY
+
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
 
 /* Miryoku */
 //#define BILATERAL_COMBINATIONS
@@ -46,6 +52,13 @@
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
+// When idle, turn off Select Word after 2 seconds.
+#define SELECT_WORD_TIMEOUT 2000
+
+// When idle, turn off Sentence Case after 2 seconds.
+#define SENTENCE_CASE_TIMEOUT 2000
+
+#define ACHORDION_STREAK
 // getreuer
 //----------------------------------------------------------------------------
 
