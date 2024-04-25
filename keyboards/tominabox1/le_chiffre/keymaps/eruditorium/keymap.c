@@ -163,7 +163,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 uint16_t achordion_streak_timeout(uint16_t tap_hold_keycode) {
   if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
     return 0;  // Disable streak detection on layer-tap keys.
-  }zs
+  }
 
   // Otherwise, tap_hold_keycode is a mod-tap key.
   uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
