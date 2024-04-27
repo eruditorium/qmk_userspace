@@ -25,9 +25,6 @@
 #define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM_PER_KEY
 
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-
 /* Miryoku */
 //#define BILATERAL_COMBINATIONS
 //#define BILATERAL_COMBINATIONS_LIMIT_CHORD_TO_N_KEYS 4 /* GUI, Alt, Ctrl, Shift */
@@ -58,7 +55,6 @@
 // When idle, turn off Sentence Case after 2 seconds.
 #define SENTENCE_CASE_TIMEOUT 2000
 
-#define ACHORDION_STREAK
 // getreuer
 //----------------------------------------------------------------------------
 
