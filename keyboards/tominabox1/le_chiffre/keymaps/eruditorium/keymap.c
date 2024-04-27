@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,   KC_R,      KC_T,         KC_MUTE,       KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,   SHT_F,     KC_G,                        KC_H,    SHT_J,   KC_K,     KC_L,    KC_SCLN,
     CTL_Z,   GUI_X,   ALT_C,  KC_V,      KC_B,                        KC_N,    KC_M,    ALT_COMM, GUI_DOT, CTL_SLSH,
-                              KC_BSPC,   LT(_LOWER, KC_ENT),           LT(_RAISE, KC_SPACE),   ALT_DEL
+                LT(_LOWER, KC_BSPC),     KC_ENT,                      KC_SPACE, LT(_RAISE, KC_DEL),
   ),
 
 /* lkklj━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
