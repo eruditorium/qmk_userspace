@@ -27,7 +27,7 @@ CAPS_WORD_ENABLE = yes
 #-----------------------------------------------------------------------------
 # https://github.com/getreuer/qmk-keymap
 
-SRC += features/achordion.c
+# SRC += features/achordion.c
 # SRC += features/autocorrection.c
 # SRC += features/custom_shift_keys.c
 SRC += features/select_word.c
