@@ -72,10 +72,11 @@ jobs:
         with:
             retention-days: 60
             compression-level: 0
-            name: qmk_${{ steps.keyboard-name.outputs.name }}
+            name: firmware
             path: |
               *.hex
               *.bin
               *.uf2
               *.json
+              */*.json
               
