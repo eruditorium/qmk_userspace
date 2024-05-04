@@ -14,7 +14,6 @@
 #define GUI_DOT RGUI_T(KC_DOT)
 #define CTL_SLSH RCTL_T(KC_SLSH)
 
-
 // GENERAL ├─────────────────┐
 #define Celsius RALT(LSFT(KC_SCLN))
 #define CTL_MNS LCTL_T(KC_MINS)
