@@ -11,8 +11,8 @@ MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
 UNICODE_ENABLE = no         # Unicode
 
-RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
-RGB_MATRIX_ENABLE = no
+RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.
+RGB_MATRIX_ENABLE = yes
 
 
 QMK_SETTINGS = no
