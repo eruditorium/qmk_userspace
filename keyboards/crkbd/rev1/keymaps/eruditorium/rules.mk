@@ -27,7 +27,7 @@ DYNAMIC_KEYMAP_LAYER_COUNT = 3
 AUTO_SHIFT_ENABLE = yes
 
 # https://docs.qmk.fm/#/feature_caps_word
-# make sure COMMAN_ENABLE = no
+# make sure COMMAND_ENABLE = no
 # CAPS_WORD_ENABLE = yes
 
 #-----------------------------------------------------------------------------
