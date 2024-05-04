@@ -20,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-#define vendor_id       0x4B44
-#define product_id      0x4D72
-#define usb.device_version 	0x0002
-#define manufacturer    Kiser Designs
-#define product         Monorail V2
+#define VENDOR_ID       0x4B44
+#define PRODUCT_ID      0x4D72
+#define DEVICE_VER 	0x0002
+#define MANUFACTURER    Kiser Designs
+#define PRODUCT         Monorail V2
 
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 12
@@ -49,7 +49,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define ENCODER_RESOLUTIONS { 4 }
 
-#define WS2812_DI_PIN GP29
+#define RGB_DI_PIN GP29
 #define DRIVER_LED_TOTAL 12
 #define RGB_MATRIX_LED_COUNT 12
 #define RGBLED_NUM 12
