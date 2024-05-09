@@ -33,10 +33,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // https://github.com/manna-harbour/qmk_firmware/issues/29
 
 /* QMK */
-#define TAPPING_TERM 160
-// #define QUICK_TAP_TERM 0
-// #define TAPPING_TERM_PER_KEY
-// #define DYNAMIC_TAPPING_TERM_INCREMENT 10
+/* QMK */
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
+//#define TAPPING_TERM_PER_KEY
+#define TAPPING_FORCE_HOLD
+#define RETRO_TAPPING
+#define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM 0
+
 
 /* Miryoku */
 // #define BILATERAL_COMBINATIONS
