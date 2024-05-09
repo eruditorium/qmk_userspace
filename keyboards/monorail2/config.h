@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "config_common.h"
+//#include "config_common.h"
 
 #define VENDOR_ID       0x4B44
 #define PRODUCT_ID      0x4D72
