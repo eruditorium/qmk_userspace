@@ -18,8 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "features/config_common.h"
-
 #define VENDOR_ID       0x4B44
 #define PRODUCT_ID      0x4D72
 #define DEVICE_VER 	0x0002
