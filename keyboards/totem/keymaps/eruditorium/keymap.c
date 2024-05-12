@@ -48,6 +48,7 @@ enum custom_keycodes {
     ADJUST,
     SNAP,
     SELWORD,
+    SELECTLINE,
 };
 
 #include "features/macro.c"
@@ -205,21 +206,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ l a y e r                                       │
 // └─────────────────────────────────────────────────┘
 
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
+    case QWERTY:
+         if (record->event.pressed) {
+             set_single_persistent_default_layer(_QWERTY);
+         }
+         return false;
 
 // ┌─────────────────────────────────────────────────┐
 // │ p r o d u c t i v i t y                         │
 // └─────────────────────────────────────────────────┘
 
-      case SNAP:
-          if (record->event.pressed) {
-            SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-          }
-          break;
+    case SNAP:
+        if (record->event.pressed) {
+          SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
+        }
+        return false;
+
+    case SELECTLINE:  // Selects the current line.
+       if (record->event.pressed) {
+        SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
+       }
+       return false;
+
     }
     return true;
 }

@@ -2,9 +2,10 @@
 // ┌─────────────────────────────────────────────────┐
 // │ c o m b o s                                     │
 // └─────────────────────────────────────────────────┘
-// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 //
 #include QMK_KEYBOARD_H
+
 enum combos {
   QA_ESC,
   PSCLN_TAB,
@@ -20,7 +21,10 @@ enum combos {
   DF_MINUS,
   CV_DOUBLEQUOTE,
   JK_UNDERSCORE,
-  MCOMMA_QUOTE
+  MCOMMA_QUOTE,
+
+  ZX_UNDO,
+  AS_SELECTLINE,
 };
 
 const uint16_t PROGMEM qa_combo[] = {KC_Q, KC_A, COMBO_END};
@@ -40,6 +44,9 @@ const uint16_t PROGMEM mc_combo[] = {KC_M, ALT_COMM, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {SHT_F, KC_D, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {SHT_J, KC_K, COMBO_END};
 
+const uint16_t PROGMEM zx_combo[] = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM as_combo[] = {ALT_A, KC_S, COMBO_END};
+
 combo_t key_combos[] = {
   [QA_ESC] = COMBO(qa_combo, KC_ESC),
   [PSCLN_TAB] = COMBO(pscln_combo, KC_TAB),
@@ -57,4 +64,6 @@ combo_t key_combos[] = {
 
   [CV_DOUBLEQUOTE] = COMBO(cv_combo, KC_DQT),
   [MCOMMA_QUOTE] = COMBO(mc_combo, KC_QUOT),
+  [ZX_UNDO] = COMBO(zx_combo, KC_UNDO),
+  [AS_SELECTLINE] = COMBO(as_combo, KC_HOME, SELECTLINE),
 };
