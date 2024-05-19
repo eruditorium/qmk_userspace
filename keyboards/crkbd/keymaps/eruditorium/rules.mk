@@ -20,7 +20,7 @@ KEY_OVERRIDE_ENABLE = no
 DYNAMIC_KEYMAP_LAYER_COUNT = 3
 
 # auto shift
-AUTO_SHIFT_ENABLE = yes
+AUTO_SHIFT_ENABLE = no
 
 # https://docs.qmk.fm/#/feature_caps_word
 # make sure COMMAND_ENABLE = no

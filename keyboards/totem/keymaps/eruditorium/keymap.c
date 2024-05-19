@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     SELECTLINE,  XXXXXXX,   KC_END,   C(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
                                    KC_DEL,   _______,  _______,   KC_UNDS,  ADJUST,   KC_0
  ),
- 
+
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
@@ -221,7 +221,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
 
-    case SELLINE:  // Selects the current line.
+    case SELECTLINE:  // Selects the current line.
        if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
        }
