@@ -539,10 +539,6 @@ static void render_animation(const char **frames, size_t frame_size,
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
-  if (!process_select_word(keycode, record, SELWORD)) {
-    return false;
-  }
-
   if (record->event.pressed) {
     animation_timeout = timer_read32();
     frame_timer = timer_read32();
@@ -581,7 +577,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 
-  case SELECTLINE: // Selects the current line.
+  case SELLINE: // Selects the current line.
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
     }
