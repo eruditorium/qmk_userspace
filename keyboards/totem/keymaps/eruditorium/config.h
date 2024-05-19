@@ -57,3 +57,5 @@ for more options.
 // Activate by double tapping Left Shift:
 // alternative:
 //#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+#define SELECT_WORD_TIMEOUT 2000  // When idle, clear state after 2 seconds.
