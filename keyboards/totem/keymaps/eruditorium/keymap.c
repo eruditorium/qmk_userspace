@@ -48,7 +48,7 @@ enum custom_keycodes {
     ADJUST,
     SNAP,
     SELWORD,
-    SELLINE,
+    SELECTLINE,
 };
 
 #include "features/macro.c"
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_CAPS,   KC_HOME,  KC_UP,    KC_PGUP,  KC_LCBR,   KC_RCBR,  KC_7,     KC_8,     KC_9,     KC_PPLS,
               KC_NUM,    KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_4,     KC_5,     KC_6,     KC_MINS,
-    SELLINE,  XXXXXXX,   KC_END,   C(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
+    SELECTLINE,  XXXXXXX,   KC_END,   C(KC_S),  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  KC_EQL,
                                    KC_DEL,   _______,  _______,   KC_UNDS,  ADJUST,   KC_0
  ),
  /*
