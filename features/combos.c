@@ -65,5 +65,5 @@ combo_t key_combos[] = {
   [CV_DOUBLEQUOTE] = COMBO(cv_combo, KC_DQT),
   [MCOMMA_QUOTE] = COMBO(mc_combo, KC_QUOT),
   [ZX_UNDO] = COMBO(zx_combo, KC_UNDO),
-  [AS_SELECTLINE] = COMBO(as_combo, SELECTLINE)
+  [AS_SELECTLINE] = COMBO(as_combo, SELLINE)
 };
