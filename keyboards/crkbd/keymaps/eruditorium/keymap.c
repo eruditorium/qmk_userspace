@@ -54,9 +54,9 @@ enum custom_keycodes {
   SELECTLINE,
   MC_QUOT
 };
-
-#include "features/combos.c"
 #include "features/macro.c"
+#include "features/combos.c"
+
 
 // ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S │
