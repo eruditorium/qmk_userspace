@@ -53,9 +53,9 @@ for more options.
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Activate by double tapping Left Shift:
 // alternative:
-//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 #define SELECT_WORD_TIMEOUT 2000  // When idle, clear state after 2 seconds.
