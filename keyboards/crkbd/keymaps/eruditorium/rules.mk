@@ -24,7 +24,7 @@ AUTO_SHIFT_ENABLE = no
 
 # https://docs.qmk.fm/#/feature_caps_word
 # make sure COMMAND_ENABLE = no
-# CAPS_WORD_ENABLE = yes
+CAPS_WORD_ENABLE = yes
 
 #-----------------------------------------------------------------------------
 # getreuer

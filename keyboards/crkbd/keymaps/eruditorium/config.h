@@ -100,7 +100,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Activate by double tapping Left Shift:
 //alternative: 
-//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // Add these flags to your rules.mk file:
 // This enables Link Time Optimization, saving a significant amount of space.
