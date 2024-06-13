@@ -16,10 +16,10 @@
 #include QMK_KEYBOARD_H
 #include "features/select_word.h"
 
-// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ D E F I N I T I O N S │
-// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+// ┌─────────────────────────────────────────────────┐
+// │ D E F I N I T I O N S                           │
+// └─────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   l a y e r s                       │
@@ -48,8 +48,9 @@ enum custom_keycodes {
   SELWORD,
   SELECTLINE,
 };
-#include "features/macro.c"
 #include "features/combos.c"
+#include "features/macro.c"
+
 
 #define AE RALT(KC_Q)
 #define SS RALT(KC_S)
@@ -60,12 +61,10 @@ enum custom_keycodes {
 #define UE RALT(KC_Y)
 #define OE RALT(KC_P)
 
-
-
-// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ K E Y M A P S │
-// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+// ┌─────────────────────────────────────────────────────┐
+// │ K E Y M A P S                                       │
+// └─────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /*
@@ -74,14 +73,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       └─────────────────────────────────────────────────┘
     */
     [_QWERTY] = LAYOUT(
-    //╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         
-      KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,  KC_MUTE,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
-      KC_A,     KC_S,     KC_D,     SHT_F,    KC_G,                KC_H,     SHT_J,    KC_K,     KC_L,     KC_SCLN,
-      CTL_Z,    GUI_X,    ALT_C,    KC_V,     KC_B,                KC_N,     KC_M,     ALT_COMM, GUI_DOT,  CTL_SLSH,
-                          LT(_LOWER, KC_BSPC),KC_ENT,              KC_SPACE, LT(_RAISE, KC_DEL)
-      ),
+        // ╷         ╷         ╷         ╷         ╷         ╷╷         ╷ ╷ ╷ ╷
+        // ╷
+        KC_Q, KC_W, KC_E, KC_R, KC_T, KC_MUTE, KC_Y, KC_U, KC_I, KC_O, KC_P,
+        KC_A, KC_S, KC_D, SHT_F, KC_G, KC_H, SHT_J, KC_K, KC_L, KC_SCLN, CTL_Z,
+        GUI_X, ALT_C, KC_V, KC_B, KC_N, KC_M, ALT_COMM, GUI_DOT, CTL_SLSH,
+        LT(_LOWER, KC_BSPC), KC_ENT, KC_SPACE, LT(_RAISE, KC_DEL)),
 
-    /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+    /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
 
       ┌─────────────────────────────────────────────────┐
@@ -89,12 +88,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       └─────────────────────────────────────────────────┘
     */
     [_LOWER] = LAYOUT(
-    //╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         
-      KC_ESC,   KC_HOME,  KC_UP,    KC_PGUP,  KC_LCBR, KC_MUTE,    KC_RCBR,  KC_7,     KC_8,     KC_9,     KC_PPLS,
-      KC_TAB,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LBRC,             KC_RBRC,  KC_4,     KC_5,     KC_6,     KC_EQL, 
-      XXXXXXX,  KC_END,   C(KC_S),  KC_PGDN,  KC_LPRN,             KC_RPRN,  KC_1,     KC_2,     KC_3,     KC_PAST,  
-                                    _______,  KC_ENT,              ADJUST,   KC_0
-      ),
+        // ╷         ╷         ╷         ╷         ╷         ╷╷         ╷ ╷ ╷ ╷
+        // ╷
+        KC_ESC, KC_HOME, KC_UP, KC_PGUP, KC_LCBR, KC_MUTE, KC_RCBR, KC_7, KC_8,
+        KC_9, KC_PPLS, KC_TAB, KC_LEFT, KC_DOWN, KC_RGHT, KC_LBRC, KC_RBRC,
+        KC_4, KC_5, KC_6, KC_EQL, XXXXXXX, KC_END, C(KC_S), KC_PGDN, KC_LPRN,
+        KC_RPRN, KC_1, KC_2, KC_3, KC_PAST, _______, KC_ENT, ADJUST, KC_0),
 
     /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
@@ -103,12 +102,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       └─────────────────────────────────────────────────┘
     */
     [_RAISE] = LAYOUT(
-    //╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         
-      KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC, KC_MUTE,    KC_CIRC,  UE,       KC_AMPR,  OE,       Celsius, 
-      AE,       SS,       XXXXXXX,  XXXXXXX,  XXXXXXX,             KC_BSLS,  XXXXXXX,  RALT(KC_5),RALT(KC_4), RALT(KC_M), 
-      LSFT(KC_GRV), KC_GRV, RALT(KC_C), XXXXXXX,XXXXXXX, KC_PIPE,  XXXXXXX,  RALT(KC_2), RALT(KC_3),        XXXXXXX, 
-                                    ADJUST,   KC_ESC,              KC_TAB,    _______
-        ),
+        // ╷         ╷         ╷         ╷         ╷         ╷╷         ╷ ╷ ╷ ╷
+        // ╷
+        KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_MUTE, KC_CIRC, UE, KC_AMPR,
+        OE, Celsius, AE, SS, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, XXXXXXX,
+        RALT(KC_5), RALT(KC_4), RALT(KC_M), LSFT(KC_GRV), KC_GRV, RALT(KC_C),
+        XXXXXXX, XXXXXXX, KC_PIPE, XXXXXXX, RALT(KC_2), RALT(KC_3), XXXXXXX,
+        ADJUST, KC_ESC, KC_TAB, _______),
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
@@ -118,13 +118,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        */
     // Adjust
     [_ADJUST] = LAYOUT(
-    //╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         
-      QK_BOOT,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, KC_MUTE,    KC_MUTE,  KC_F7,    KC_F8,    KC_F9,    KC_F12,  
-      RGB_TOG,  RGB_HUI,  RGB_SAI,  RGB_VAI,  XXXXXXX,             KC_VOLU,  KC_F4,    KC_F5,    KC_F6,    KC_F11,  
-      RGB_MOD,  RGB_HUD,  RGB_SAD,  RGB_VAD,  XXXXXXX,             KC_VOLD,  KC_F1,    KC_F2,    KC_F3,    KC_F10,
-                                    _______,  _______,             _______, _______ 
-      )
-  };
+        // ╷         ╷         ╷         ╷         ╷         ╷╷         ╷ ╷ ╷ ╷
+        // ╷
+        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MUTE, KC_MUTE, KC_F7,
+        KC_F8, KC_F9, KC_F12, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,
+        KC_VOLU, KC_F4, KC_F5, KC_F6, KC_F11, RGB_MOD, RGB_HUD, RGB_SAD,
+        RGB_VAD, XXXXXXX, KC_VOLD, KC_F1, KC_F2, KC_F3, KC_F10, _______,
+        _______, _______, _______)};
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
