@@ -48,8 +48,9 @@ enum custom_keycodes {
   SELWORD,
   SELECTLINE,
 };
-#include "features/combos.c"
 #include "features/macro.c"
+#include "features/combos.c"
+
 
 
 #define AE RALT(KC_Q)
