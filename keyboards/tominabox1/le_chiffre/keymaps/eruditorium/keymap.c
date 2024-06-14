@@ -51,8 +51,6 @@ enum custom_keycodes {
 #include "features/macro.c"
 #include "features/combos.c"
 
-
-
 #define AE RALT(KC_Q)
 #define SS RALT(KC_S)
 #define EACC RALT(KC_F)
