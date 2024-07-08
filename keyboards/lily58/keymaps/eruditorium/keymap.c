@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,
         KC_RGHT, _______, _______, KC_MUTE, KC_END, XXXXXXX, KC_PGDN, XXXXXXX,
         _______, _______, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______),
+        _______, _______, ADJUST, _______, _______, _______, _______, _______),
     /* RAISE
      * ,-----------------------------------------.
      * ,-----------------------------------------. |  F11 |  F1  |  F2  |  F3  |
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,
         KC_RGHT, KC_EQL, _______, KC_MUTE, KC_END, XXXXXXX, KC_PGDN, XXXXXXX,
         _______, _______, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______),
+        _______, _______, _______, _______, _______, ADJUST, _______, _______),
     /* ADJUST
      * ,-----------------------------------------.
      * ,-----------------------------------------. |      |      |      |      |
