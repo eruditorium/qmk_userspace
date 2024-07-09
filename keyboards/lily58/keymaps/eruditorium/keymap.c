@@ -21,7 +21,7 @@ enum crkbd_layers {
   _QWERTY = 0,
   _LOWER,
   _RAISE,
- // _ADJUST,
+  _ADJUST,
 };
 
 // ┌─────────────────────────────────────────────────┐
@@ -31,7 +31,7 @@ enum custom_keycodes {
   QWERTY,
   LOWER,
   RAISE,
-  //ADJUST,
+  ADJUST,
   SNAP,
   SELWORD,
   SELECTLINE,
