@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
   KC_GRV,  KC_VOLU, KC_HOME, KC_UP,   KC_PGUP, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_END,  KC_HOME, XXXXXXX, _______,
   _______, KC_VOLD, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-  _______, KC_MUTE, KC_END,  XXXXXXX, KC_PGDN, XXXXXXX,  _______, _______,XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
+  _______, KC_MUTE, KC_END,  XXXXXXX, KC_PGDN, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______
 ),
 /* RAISE
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
   KC_GRV,  KC_VOLU, KC_HOME, KC_UP,   KC_PGUP, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_END,  KC_HOME, XXXXXXX, _______,
   _______, KC_VOLD, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-  _______, KC_MUTE, KC_END,  XXXXXXX, KC_PGDN, XXXXXXX,  _______, _______,XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
+  _______, KC_MUTE, KC_END,  XXXXXXX, KC_PGDN, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______
 ),
 /* ADJUST
@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 /*╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#include "features/tapping_term.c"
+//#include "features/tapping_term.c"
 /*╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸*/
 #include "features/oled.c"
 /* ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
