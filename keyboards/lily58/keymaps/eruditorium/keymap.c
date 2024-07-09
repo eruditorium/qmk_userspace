@@ -21,7 +21,7 @@ enum crkbd_layers {
   _QWERTY = 0,
   _LOWER,
   _RAISE,
-  _ADJUST,
+ // _ADJUST,
 };
 
 // ┌─────────────────────────────────────────────────┐
@@ -31,7 +31,7 @@ enum custom_keycodes {
   QWERTY,
   LOWER,
   RAISE,
-  ADJUST,
+  //ADJUST,
   SNAP,
   SELWORD,
   SELECTLINE,
@@ -126,6 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   |      |      |ESC   |/       /         \      \ |Tab   |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
+ /*
   [_ADJUST] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
@@ -133,6 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______,  _______, _______, _______
   )
+*/
 };
 
 /*╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
