@@ -10,6 +10,11 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
 UNICODE_ENABLE = no         # Unicode
+BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
+NKRO_ENABLE = no            # N-Key Rollover
+BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
+RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
+SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 
 QMK_SETTINGS = no
 DYNAMIC_MACRO_ENABLE = no

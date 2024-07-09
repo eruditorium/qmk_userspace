@@ -551,11 +551,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // │ d e a d   k e y s                               │
     // └─────────────────────────────────────────────────┘
 
-  case MC_QUOT:
+  /*case MC_QUOT:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_QUOT) SS_TAP(X_SPC));
     }
-    return false;
+    return false;*/
 
     // ┌─────────────────────────────────────────────────┐
     // │ l a y e r                                       │
@@ -571,7 +571,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // │ p r o d u c t i v i t y                         │
     // └─────────────────────────────────────────────────┘
 
-  case SNAP:
+  /*case SNAP:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT(SS_LWIN("S"))); // WIN
     }
@@ -582,7 +582,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
     }
     return false;
-  }
+  }*/
   return true;
 }
 
