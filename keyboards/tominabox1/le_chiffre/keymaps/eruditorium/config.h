@@ -22,12 +22,11 @@
 /* QMK */
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
-//#define TAPPING_TERM_PER_KEY
 #define TAPPING_FORCE_HOLD
-#define RETRO_TAPPING
 #define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM 0
 
+/* Combos */
+#define COMBO_TERM 100
 
 /* Miryoku */
 //#define BILATERAL_COMBINATIONS
