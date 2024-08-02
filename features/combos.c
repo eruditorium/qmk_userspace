@@ -7,7 +7,7 @@
 #include QMK_KEYBOARD_H
 
 enum combos {
-  //QA_ESC,
+  QA_ESC,
   PSCLN_TAB,
 
   RT_LEFTBRACE,
@@ -45,10 +45,10 @@ const uint16_t PROGMEM df_combo[] = {SHT_F, KC_D, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {SHT_J, KC_K, COMBO_END};
 
 const uint16_t PROGMEM zx_combo[] = {KC_Z, KC_X, COMBO_END};
-//const uint16_t PROGMEM as_combo[] = {KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM as_combo[] = {KC_A, KC_S, COMBO_END};
 
 combo_t key_combos[] = {
-  //[QA_ESC] = COMBO(qa_combo, KC_ESC),
+  [QA_ESC] = COMBO(qa_combo, KC_ESC),
   [PSCLN_TAB] = COMBO(pscln_combo, KC_TAB),
 
   [RT_LEFTBRACE] = COMBO(rt_combo, KC_LCBR),
