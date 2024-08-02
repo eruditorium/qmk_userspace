@@ -1,14 +1,26 @@
 {
-    "keyboard_name": "TOTEM",
-    "url": "https://github.com/GEIGEIGEIST/TOTEM",
+    "keyboard_name": "TOTEM", 
+    "url": "https://github.com/GEIGEIGEIST/TOTEM", 
     "manufacturer": "GEIST",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "usb": {
         "vid": "0x3A3C",
         "pid": "0x0002",
         "device_version": "0.3.0"
     },
+    "debounce": 5,
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "cols": ["GP6", "GP7", "GP3", "GP4", "GP2"],
+        "rows": ["GP26", "GP27", "GP28", "GP29"]
+    },
+    "matrix_size": {
+        "cols": 5,
+        "rows": 8
+    },
     "layouts": {
-        "LAYOUT": {
+        "LAYOUT_totem": {
             "layout": [
                 {"x": 0.776, "y": 1.519, "w": 1.059, "r": -10},
                 {"x": 1.964, "y": 0.605, "w": 1.059, "r": -4},
