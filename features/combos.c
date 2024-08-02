@@ -27,7 +27,7 @@ enum combos {
   //AS_SELECTLINE
 };
 
-//const uint16_t PROGMEM qa_combo[] = {KC_Q, KC_A, COMBO_END};
+const uint16_t PROGMEM qa_combo[] = {KC_Q, KC_A, COMBO_END};
 const uint16_t PROGMEM pscln_combo[] = {KC_P, KC_SCLN, COMBO_END};
 
 const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
