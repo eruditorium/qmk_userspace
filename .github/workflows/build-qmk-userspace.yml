@@ -23,7 +23,7 @@ jobs:
 
   compile-userpace-keymaps:
     runs-on: ubuntu-latest
-    container: qmkfm/qmk_cli
+    container: ghcr.io/qmk/qmk_cli
     needs: list-user-keymaps
     strategy:
       fail-fast: false
