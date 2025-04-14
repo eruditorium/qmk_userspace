@@ -69,14 +69,13 @@ jobs:
         
       - name: Archive firmware
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
-            retention-days: 60
-            compression-level: 0
-            name: firmware
-            path: |
-              *.hex
-              *.bin
-              *.uf2
-              *.json
-              */*.json
+          name: ${{ matrix.file }}_${{ github.actor }}
+          path: |
+            *.hex
+            *.bin
+            *.uf2
+            *.json
+            */*.json
               
