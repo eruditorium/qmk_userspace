@@ -68,7 +68,7 @@ jobs:
         run: qmk c2json -o ${{ matrix.keyboards }}.json -km ${{ github.actor }} -kb ${{ matrix.keyboards }} keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
         
       - name: Archive firmware
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3
         with:
             retention-days: 60
             compression-level: 0
