@@ -32,23 +32,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // https://github.com/manna-harbour/qmk_firmware/pull/56
 // https://github.com/manna-harbour/qmk_firmware/issues/29
 
-/* QMK */
-/* QMK */
-#undef TAPPING_TERM
-#define TAPPING_TERM 200
-//#define TAPPING_TERM_PER_KEY
-#define TAPPING_FORCE_HOLD
-#define RETRO_TAPPING
-#define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM 0
-
+// Tap-hold configuration for home row mods.
+#define TAPPING_TERM 225
+#define TAPPING_TERM_PER_KEY
 #define CHORDAL_HOLD
+#define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM_PER_KEY
 
-// Auto Shift
-// #define NO_AUTO_SHIFT_ALPHA
-// #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
-// #define AUTO_SHIFT_NO_SETUP
-// #define AUTO_SHIFT_MODIFIERS
+// Activate CAPS WORD by pressing Left Shift + Right Shift
+// https://docs.qmk.fm/#/feature_caps_word
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+// Activate by double tapping Left Shift:
+//alternative: 
+//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+// Holding Shift while Caps Word is active inverts the shift state.
+#define CAPS_WORD_INVERT_ON_SHIFT
+// When idle, turn off Caps Word after 5 seconds.
+#define CAPS_WORD_IDLE_TIMEOUT 5000
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -85,12 +86,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_HEIGHT 8
 #define OLED_FONT_END 0x9F
 
-// Activate CAPS WORD by pressing Left Shift + Right Shift
-// https://docs.qmk.fm/#/feature_caps_word
-//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-// Activate by double tapping Left Shift:
-//alternative: 
-#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 
 // Add these flags to your rules.mk file:
 // This enables Link Time Optimization, saving a significant amount of space.
