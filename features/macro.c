@@ -23,3 +23,10 @@
 #define ADJUST MO(_ADJUST)
 #define QWERTY DF(_QWERTY)
 
+
+#define KC_AE RALT(KC_A)
+#define KC_SS RALT(KC_S)
+#define KC_UE RALT(KC_U)
+#define KC_OE RALT(KC_O)
+#define MUE RALT(KC_M)
+#define KC_EURO RALT(KC_E)
