@@ -26,21 +26,6 @@ AUTO_SHIFT_ENABLE = no
 # make sure COMMAND_ENABLE = no
 CAPS_WORD_ENABLE = yes
 
-#-----------------------------------------------------------------------------
-# getreuer
-#-----------------------------------------------------------------------------
-# https://github.com/getreuer/qmk-keymap
-
-# SRC += features/achordion.c
-# SRC += features/autocorrection.c
-# SRC += features/custom_shift_keys.c
-# SRC += features/select_word.c
-
-
-#-----------------------------------------------------------------------------
-# sunaku
-#-----------------------------------------------------------------------------
-
 # https://docs.qmk.fm/#/custom_quantum_functions?id=deferred-execution
 DEFERRED_EXEC_ENABLE = yes
 
