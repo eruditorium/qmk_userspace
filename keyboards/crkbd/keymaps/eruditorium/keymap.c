@@ -49,8 +49,6 @@ enum custom_keycodes {
   RAISE,
   ADJUST,
   SNAP,
-  SELWORD,
-  SELECTLINE,
   MC_QUOT
 };
 #include "features/macro.c"
