@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // qmk c2json -o ~/crkbd-nico.json -km nico -kb crkbd keymap.c --no-cpp
 
 #include QMK_KEYBOARD_H
-#include "features/select_word.h"
 // ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ D E F I N I T I O N S │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
