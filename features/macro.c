@@ -29,4 +29,5 @@
 #define KC_UE RALT(KC_U)
 #define KC_OE RALT(KC_O)
 #define MUE RALT(KC_M)
-#define KC_EURO RALT(KC_E)
+#define EURO RALT(KC_E) 
+#define CELSIUS RALT(LSFT(KC_SCLN))
