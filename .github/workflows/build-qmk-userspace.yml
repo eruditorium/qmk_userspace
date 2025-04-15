@@ -42,13 +42,12 @@ jobs:
           ref: master
           submodules: true
 
-      # path is relative to github.workspace
-      - name: Checkout userspace
+      - name: Checkout full userspace repository
         uses: actions/checkout@v4
         with:
-          path: ${{ env.USERSPACE_PATH }}
-          persist-credentials: false
-
+          submodules: true  # <--- Wichtig!
+          path: user_repo
+          
       - name: Setup safe directory
         run: git config --global --add safe.directory '*'
 
