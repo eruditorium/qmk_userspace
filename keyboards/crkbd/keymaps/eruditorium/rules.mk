@@ -33,5 +33,5 @@ DEFERRED_EXEC_ENABLE = yes
 # https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 # Add these flags to your rules.mk file: EXTRAFLAGS += -flto
 # Drashna, on QMK issue 3224, paraphrased
-EXTRAFLAGS += -flto
 LTO_ENABLE = yes
+EXTRAFLAGS += -Os -flto

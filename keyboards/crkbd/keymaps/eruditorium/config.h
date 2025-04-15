@@ -39,17 +39,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM_PER_KEY
 
+#define COMBO_COUNT 12
+
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-// Activate by double tapping Left Shift:
-//alternative: 
+// Activate by double tapping Left Shift:-
+//alternative:
 //#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // Holding Shift while Caps Word is active inverts the shift state.
 #define CAPS_WORD_INVERT_ON_SHIFT
 // When idle, turn off Caps Word after 5 seconds.
-#define CAPS_WORD_IDLE_TIMEOUT 5000
+// #define CAPS_WORD_IDLE_TIMEOUT 5000
 
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -60,17 +62,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define COMBO_HOLD_TERM 175  // how long at least one of the combo keys must be held to trigger
 
 #ifdef RGBLIGHT_ENABLE
-    #undef RGBLIGHT_EFFECT_BREATHING
-    #undef RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #undef RGBLIGHT_EFFECT_KNIGHT
-    #undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #undef RGBLIGHT_EFFECT_SNAKE
-    #undef RGBLIGHT_EFFECT_CHRISTMAS
-    #undef RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #undef RGBLIGHT_EFFECT_RGB_TEST
-    #undef RGBLIGHT_EFFECT_ALTERNATING
-    #undef RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
+    #undef RGBLIGHT_ANIMATIONS
+    #define RGBLIGHT_LIMIT_VAL 80
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
@@ -86,7 +79,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_HEIGHT 8
 #define OLED_FONT_END 0x9F
 
-
+#define OLED_DISABLE_TIMEOUT
+#define OLED_DISABLE_SCROLL
 
 // Add these flags to your rules.mk file:
 // This enables Link Time Optimization, saving a significant amount of space.
