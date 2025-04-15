@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD
 #define QUICK_TAP_TERM_PER_KEY
 
-#define COMBO_COUNT 12
+#define COMBO_COUNT 8
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
@@ -63,7 +63,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLIGHT_ANIMATIONS
-    #define RGBLIGHT_LIMIT_VAL 80
+    #define RGBLIGHT_LIMIT_VAL 40
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
