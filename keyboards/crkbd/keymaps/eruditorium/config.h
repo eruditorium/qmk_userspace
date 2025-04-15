@@ -34,10 +34,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Tap-hold configuration for home row mods.
 #define TAPPING_TERM 225
-#define TAPPING_TERM_PER_KEY
+//#define TAPPING_TERM_PER_KEY
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM_PER_KEY
+// #define QUICK_TAP_TERM_PER_KEY
 
 #define COMBO_COUNT 8
 
@@ -53,8 +53,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // When idle, turn off Caps Word after 5 seconds.
 // #define CAPS_WORD_IDLE_TIMEOUT 5000
 
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
+// #undef LOCKING_SUPPORT_ENABLE
+// #undef LOCKING_RESYNC_ENABLE
 
 // source: https://jasoncarloscox.com/blog/combo-mods/
 // #define COMBO_TERM 25        // how quickly all combo keys must be pressed in succession to trigger
