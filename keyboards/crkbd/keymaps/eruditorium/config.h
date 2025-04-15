@@ -77,7 +77,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_H "features/glcdfont.c"
 #define OLED_FONT_WIDTH 8
 #define OLED_FONT_HEIGHT 8
-#define OLED_FONT_END 0x9F
+#define OLED_FONT_START 65  // 'A'
+#define OLED_FONT_END   87  // 'W'
+#define OLED_FONT_WIDTH 8   // 8x8
 
 #define OLED_DISABLE_TIMEOUT
 #define OLED_DISABLE_SCROLL
