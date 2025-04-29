@@ -35,21 +35,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Tap-hold configuration for home row mods.
 #define TAPPING_TERM 225
 //#define TAPPING_TERM_PER_KEY
-#define CHORDAL_HOLD
+//#define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
 // #define QUICK_TAP_TERM_PER_KEY
 
-#define COMBO_COUNT 8
+#define COMBO_COUNT 10
 
 // Activate CAPS WORD by pressing Left Shift + Right Shift
 // https://docs.qmk.fm/#/feature_caps_word
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Activate by double tapping Left Shift:-
 //alternative:
 //#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // Holding Shift while Caps Word is active inverts the shift state.
-#define CAPS_WORD_INVERT_ON_SHIFT
+//#define CAPS_WORD_INVERT_ON_SHIFT
 // When idle, turn off Caps Word after 5 seconds.
 // #define CAPS_WORD_IDLE_TIMEOUT 5000
 
