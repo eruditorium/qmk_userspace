@@ -19,7 +19,7 @@
 // #define CTL_MNS LCTL_T(KC_ESC)
 #define ALT_DEL RALT_T(KC_DEL)
 #define LOWER LT(_LOWER, SELWORD)
-#define RAISE LT(_RAISE, SELLINE)
+#define RAISE LT(_RAISE, KC_TAB)
 #define ADJUST MO(_ADJUST)
 // #define QWERTY DF(_QWERTY)
 
