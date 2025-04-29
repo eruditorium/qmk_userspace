@@ -54,23 +54,6 @@ enum custom_keycodes {
 #include "features/macro.c"
 #include "features/combos.c"
 
-// #ifdef CHORDAL_HOLD
-// Handedness for Chordal Hold.
-//   const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
-//     LAYOUT_split_3x6_3(
-//     '*'    , 'L'    , 'L'    , 'L'    , 'L'    , 'L'    ,
-//     '*'    , 'L'    , 'L'    , 'L'    , 'L'    , 'L'    ,
-//     '*'    , 'L'    , 'L'    , 'L'    , 'L'    , 'L'    ,
-//     '*'    , 'L'    , 'L'    , 'L'    , 'L'    , 'L'    ,
-//                                                  'L'    , 'L'    , 'L'    ,
-//                       'R'    , 'R'    , 'R'    , 'R'    , 'R'    , '*'    ,
-//                       'R'    , 'R'    , 'R'    , 'R'    , 'R'    , '*'    ,
-//                       'R'    , 'R'    , 'R'    , 'R'    , 'R'    , '*'    ,
-//                       'R'    , 'R'    , 'R'    , 'R'    , 'R'    , '*'    ,
-//     'R'    , 'R'    , 'R'
-//   );
-// #endif  // CHORDAL_HOLD
-
 // ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
