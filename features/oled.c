@@ -493,9 +493,18 @@ void fp_render_layer_state(void) {
 }
 
 void fp_render_modifier_state(void) {
+  // uint8_t modifiers = get_mods() | get_oneshot_mods();
   uint8_t modifiers = get_mods();
 
   oled_set_cursor(0, 15);
+  // oled_write_char(shift, modifiers & MOD_MASK_SHIFT);
+  // oled_set_cursor(1, 15);
+  // oled_write_char(control, modifiers & MOD_MASK_CTRL);
+  // oled_set_cursor(2, 15);
+  // oled_write_char(option, modifiers & MOD_MASK_ALT);
+  // oled_set_cursor(3, 15);
+  // oled_write_char(command, modifiers & MOD_MASK_GUI);
+
   oled_write_P(PSTR("C"), modifiers & MOD_MASK_CTRL);
   oled_write_P(PSTR("A"), modifiers & MOD_MASK_ALT);
   oled_write_P(PSTR("S"), modifiers & MOD_MASK_SHIFT);
@@ -535,7 +544,45 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     frame_timer = timer_read32();
     oled_on();
   }
+/*
+  switch (keycode) {
 
+    // ┌─────────────────────────────────────────────────┐
+    // │ d e a d   k e y s                               │
+    // └─────────────────────────────────────────────────┘
+
+  case MC_QUOT:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_QUOT) SS_TAP(X_SPC));
+    }
+    return false;
+
+    // ┌─────────────────────────────────────────────────┐
+    // │ l a y e r                                       │
+    // └─────────────────────────────────────────────────┘
+
+  case QWERTY:
+    if (record->event.pressed) {
+      set_single_persistent_default_layer(_QWERTY);
+    }
+    return false;
+
+    // ┌─────────────────────────────────────────────────┐
+    // │ p r o d u c t i v i t y                         │
+    // └─────────────────────────────────────────────────┘
+
+  case SNAP:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LSFT(SS_LWIN("S"))); // WIN
+    }
+    return false;
+
+  case SELECTLINE: // Selects the current line.
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_HOME) SS_LSFT(SS_TAP(X_END)));
+    }
+    return false;
+  }*/
   return true;
 }
 
