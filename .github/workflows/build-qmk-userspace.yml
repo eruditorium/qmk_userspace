@@ -56,9 +56,16 @@ jobs:
 
       - name: Copy everything into QMK repo
         run: rsync -av user_repo/ .
-          
+        
       - name: QMK compile
         run: qmk compile -j 0 -kb ${{ matrix.keyboards }} -km ${{ github.actor }}
+
+      - name: Generate unique artifact name
+        id: artifact_name
+        run: |
+          timestamp=$(date +'%Y%m%d-%H%M%S')
+          keyboard="${{ matrix.keyboards }}"
+          echo "name=build_${keyboard}_${timestamp}" >> $GITHUB_OUTPUT
 
       - name: test
         run: echo keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c
@@ -70,7 +77,7 @@ jobs:
         uses: actions/upload-artifact@v4
         continue-on-error: true
         with:
-          name: ${{ matrix.file }}_${{ github.actor }}-${{ strategy.job-index }}
+          name: ${{ steps.artifact_name.outputs.name }}
           path: |
             *.hex
             *.bin
