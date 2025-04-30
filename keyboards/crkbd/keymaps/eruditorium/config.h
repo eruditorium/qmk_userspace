@@ -83,6 +83,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //alternative: 
 // #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
+// Chordal Hold is intended to be used together with either Permissive Hold or Hold On Other Key Press. 
+// Chordal Hold implements, by default, an "opposite hands" rule. Suppose a tap-hold key is pressed and then,
+// before the tapping term, another key is pressed. 
+// With Chordal Hold, the tap-hold key is settled as tapped if the two keys are on the same hand.
+#define CHORDAL_HOLD
+
 // Add these flags to your rules.mk file:
 // This enables Link Time Optimization, saving a significant amount of space.
 // Because the Macro and Function features are incompatible with Link Time Optimization,
