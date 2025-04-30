@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC,   KC_UE, KC_AMPR,   KC_OE, CELSIUS,  KC_DEL,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       SELWBAK,   KC_AE,   KC_SS, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_BSLS, XXXXXXX,    EURO,     MUE, XXXXXXX, XXXXXXX,
+       SELWORD,   KC_AE,   KC_SS, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_BSLS, XXXXXXX,    EURO,     MUE, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PIPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
