@@ -18,6 +18,7 @@ EXTRAKEY_ENABLE = yes
 TAP_DANCE_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 DYNAMIC_KEYMAP_LAYER_COUNT = 3
+RGB_LIGHT_ENABLE = no
 
 # auto shift
 AUTO_SHIFT_ENABLE = no
@@ -33,7 +34,7 @@ DEFERRED_EXEC_ENABLE = yes
 # https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 # Add these flags to your rules.mk file: EXTRAFLAGS += -flto
 # Drashna, on QMK issue 3224, paraphrased
-LTO_ENABLE = yes
+LTO_ENABLE = no
 EXTRAFLAGS += -Os -flto
 EXTRAFLAGS += -DNO_ACTION_MACRO
 EXTRAFLAGS += -DNO_ACTION_FUNCTION
