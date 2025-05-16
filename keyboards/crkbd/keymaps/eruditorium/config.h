@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QUICK_TAP_TERM 50
 #define QUICK_TAP_TERM_PER_KEY
 #define RETRO_TAPPING
-#define RETRO_TAPPING_PER_KEY
+//#define RETRO_TAPPING_PER_KEY
 
 #define COMBO_COUNT 10
 
@@ -56,6 +56,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define COMBO_HOLD_TERM 175  // how long at least one of the combo keys must be held to trigger
 
 #ifdef RGBLIGHT_ENABLE
+    #define RGBLIGHT_EFFECT_BREATHING
+    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+    #define RGBLIGHT_EFFECT_SNAKE
+    #define RGBLIGHT_EFFECT_KNIGHT
+    #define RGBLIGHT_EFFECT_CHRISTMAS
+    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #define RGBLIGHT_EFFECT_RGB_TEST
+    #define RGBLIGHT_EFFECT_ALTERNATING
+    #define RGBLIGHT_EFFECT_TWINKLE
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
