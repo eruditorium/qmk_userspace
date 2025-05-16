@@ -34,14 +34,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* QMK */
 #undef TAPPING_TERM
-#define TAPPING_TERM 200
+#define TAPPING_TERM 175
 //#define TAPPING_TERM_PER_KEY
 #define TAPPING_FORCE_HOLD
 #define PERMISSIVE_HOLD
 
 //#define CHORDAL_HOLD
-#define QUICK_TAP_TERM 50
-#define QUICK_TAP_TERM_PER_KEY
+#define QUICK_TAP_TERM 100
+//#define QUICK_TAP_TERM_PER_KEY
 #define RETRO_TAPPING
 //#define RETRO_TAPPING_PER_KEY
 
