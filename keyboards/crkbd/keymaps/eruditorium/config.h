@@ -32,31 +32,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // https://github.com/manna-harbour/qmk_firmware/pull/56
 // https://github.com/manna-harbour/qmk_firmware/issues/29
 
-// Tap-hold configuration for home row mods.
+/* QMK */
+#undef TAPPING_TERM
 #define TAPPING_TERM 200
 //#define TAPPING_TERM_PER_KEY
-//#define CHORDAL_HOLD
+#define TAPPING_FORCE_HOLD
 #define PERMISSIVE_HOLD
+
+//#define CHORDAL_HOLD
 #define QUICK_TAP_TERM 50
 #define QUICK_TAP_TERM_PER_KEY
+#define RETRO_TAPPING
 #define RETRO_TAPPING_PER_KEY
 
 #define COMBO_COUNT 10
 
-// Activate CAPS WORD by pressing Left Shift + Right Shift
-// https://docs.qmk.fm/#/feature_caps_word
-//#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-// Activate by double tapping Left Shift:-
-//alternative:
-//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-
-// Holding Shift while Caps Word is active inverts the shift state.
-//#define CAPS_WORD_INVERT_ON_SHIFT
-// When idle, turn off Caps Word after 5 seconds.
-// #define CAPS_WORD_IDLE_TIMEOUT 5000
-
-// #undef LOCKING_SUPPORT_ENABLE
-// #undef LOCKING_RESYNC_ENABLE
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
 
 // source: https://jasoncarloscox.com/blog/combo-mods/
 // #define COMBO_TERM 25        // how quickly all combo keys must be pressed in succession to trigger
@@ -88,23 +80,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_FONT_H "features/glcdfont.c"
 #define OLED_FONT_WIDTH 8
 #define OLED_FONT_HEIGHT 8
-//#define OLED_FONT_START 65  // 'A'
-//#define OLED_FONT_END   87  // 'W'
-//#define OLED_FONT_WIDTH 8   // 8x8
 #define OLED_FONT_END 0x9F
 
-#define OLED_DISABLE_TIMEOUT
-#define OLED_DISABLE_SCROLL
+// Activate CAPS WORD by pressing Left Shift + Right Shift
+// https://docs.qmk.fm/#/feature_caps_word
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+// Activate by double tapping Left Shift:
+//alternative: 
+// #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+// Chordal Hold is intended to be used together with either Permissive Hold or Hold On Other Key Press. 
+// Chordal Hold implements, by default, an "opposite hands" rule. Suppose a tap-hold key is pressed and then,
+// before the tapping term, another key is pressed. 
+// With Chordal Hold, the tap-hold key is settled as tapped if the two keys are on the same hand.
+// #define CHORDAL_HOLD
 
 // Add these flags to your rules.mk file:
 // This enables Link Time Optimization, saving a significant amount of space.
 // Because the Macro and Function features are incompatible with Link Time Optimization,
 // disable those features in config.h:
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
 // Drashna, on QMK issue 3224, paraphrased
 #define NO_ACTION_ONESHOT
 #define DISABLE_LEADER
 
 // configure the amount of keys a combo can be composed of
 #define EXTRA_SHORT_COMBOS
+
