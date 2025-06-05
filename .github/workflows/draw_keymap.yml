@@ -12,12 +12,12 @@ on:
 jobs:
   generate_diagram:
     name: Generate Keymap Diagram
-    uses: <USERNAME>/<REPOSITORY>/.github/workflows/your_draw_workflow.yml@main # Replace with your workflow path
+    uses: <USERNAME>/<REPOSITORY>/.github/workflows/draw_keymap.yml@main # Replace with your workflow path
     with:
       # --- REQUIRED INPUTS - REPLACE WITH YOUR VALUES ---
-      qmk_keymap_c_path: 'keyboards/your_keyboard/keymaps/default/keymap.c' # Replace this path
-      qmk_keyboard: 'your_keyboard_name'                                    # Replace this name
-      qmk_keymap: 'your_keymap_name'                                      # Replace this name
+      qmk_keymap_c_path: 'keyboards/crkbd/keymaps/eruditorium' # Replace this path
+      qmk_keyboard: 'crkbd'                                    # Replace this name
+      qmk_keymap: 'eruditorium'                                # Replace this name
 
       # --- OPTIONAL INPUTS - UNCOMMENT AND CUSTOMIZE AS NEEDED ---
       output_folder: 'docs/keymaps'
