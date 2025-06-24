@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v4
         continue-on-error: true
         with:
-          name: ${{ matrix.file }}_${{ github.actor }}-${{ strategy.job-index }}
+          name: ${{ matrix.file }}_${{ matrix.keyboards }}-${{ strategy.job-index }}
           path: |
             *.hex
             *.bin
