@@ -65,12 +65,16 @@ jobs:
         
       - name: Create json
         run: qmk c2json -o ${{ matrix.keyboards }}.json -km ${{ github.actor }} -kb ${{ matrix.keyboards }} keyboards/${{ matrix.keyboards }}/keymaps/${{ github.actor}}/keymap.c --no-cpp
+
+      - name: Set build date
+        id: build_date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         
       - name: Archive firmware
         uses: actions/upload-artifact@v4
         continue-on-error: true
         with:
-          name: ${{ matrix.file }}_${{ matrix.keyboards }}-${{ strategy.job-index }}
+          name: ${{ matrix.keyboards }}-${{ steps.build_date.outputs.date }}
           path: |
             *.hex
             *.bin
