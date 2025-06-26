@@ -37,7 +37,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define TAPPING_TERM_PER_KEY
 //#define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
+#define CHORDAL_HOLD
+#define QUICK_TAP_TERM 150
 // #define QUICK_TAP_TERM_PER_KEY
+
 
 #define COMBO_COUNT 10
 
